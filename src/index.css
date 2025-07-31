@@ -133,7 +133,20 @@
     50% { transform: translateY(-10px); }
   }
   
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
   .animate-float {
     animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide {
+    animation: slide 30s linear infinite;
+  }
+  
+  .animate-slide:hover {
+    animation-play-state: paused;
   }
 }

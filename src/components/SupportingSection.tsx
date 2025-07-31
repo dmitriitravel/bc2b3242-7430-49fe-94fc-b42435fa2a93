@@ -154,55 +154,166 @@ export const SupportingSection = () => {
           </div>
         </section>
 
-        {/* Recent Reviews Section */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Последние отзывы</h2>
-            <p className="text-muted-foreground">Что говорят ученики и родители</p>
+        {/* Enhanced Reviews Section */}
+        <section className="mb-20">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 rounded-full px-6 py-2 mb-6">
+              <Star className="w-5 h-5" />
+              <span className="font-semibold">Отзывы выпускников</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Последние отзывы</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Что говорят ученики и родители о своем опыте обучения в онлайн-школах
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Анна М.",
-                school: "Онлайн-школа Фоксфорд",
-                rating: 5,
-                text: "Отличная подготовка к ЕГЭ, удобная платформа. Поступила в МГУ!",
-                date: "2 дня назад"
-              },
-              {
-                name: "Дмитрий К.",
-                school: "Домашняя школа ИнтернетУрок",
-                rating: 4,
-                text: "Гибкий график, хорошие учителя. Рекомендую для самостоятельных детей.",
-                date: "5 дней назад"
-              },
-              {
-                name: "Мария С.",
-                school: "Онлайн-лицей №1",
-                rating: 5,
-                text: "Сын закончил 11 класс экстерном за полгода. Очень довольны результатом!",
-                date: "1 неделю назад"
-              }
-            ].map((review, index) => (
-              <Card key={index} className="h-full">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <div className="font-medium">{review.name}</div>
-                      <div className="text-sm text-muted-foreground">{review.school}</div>
-                    </div>
-                    <div className="flex">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-sm mb-3">"{review.text}"</p>
-                  <div className="text-xs text-muted-foreground">{review.date}</div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Reviews Slider */}
+          <div className="relative overflow-hidden">
+            <div className="flex space-x-6 animate-slide pb-8">
+              {[
+                {
+                  name: "Анна М.",
+                  role: "Выпускница 2024",
+                  school: "Онлайн-школа Фоксфорд",
+                  rating: 5,
+                  avatar: "https://images.unsplash.com/photo-1494790108755-2616c2b4fd68?w=64&h=64&fit=crop&crop=face",
+                  text: "Отличная подготовка к ЕГЭ, удобная платформа. Поступила в МГУ на бюджет!",
+                  results: "ЕГЭ: Русский - 96, Математика - 88, Обществознание - 94",
+                  achievement: "Поступила в МГУ",
+                  date: "2 дня назад"
+                },
+                {
+                  name: "Дмитрий К.",
+                  role: "Ученик 11 класса",
+                  school: "Домашняя школа ИнтернетУрок",
+                  rating: 4,
+                  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face",
+                  text: "Гибкий график, хорошие учителя. Рекомендую для самостоятельных детей.",
+                  results: "Средний балл: 4.7, участие в 3 олимпиадах",
+                  achievement: "Призер региональной олимпиады",
+                  date: "5 дней назад"
+                },
+                {
+                  name: "Мария С.",
+                  role: "Мама выпускника",
+                  school: "Онлайн-лицей №1",
+                  rating: 5,
+                  avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
+                  text: "Сын закончил 11 класс экстерном за полгода. Очень довольны результатом!",
+                  results: "ЕГЭ сдан досрочно, все предметы выше 80 баллов",
+                  achievement: "Поступил в МФТИ",
+                  date: "1 неделю назад"
+                },
+                {
+                  name: "Александр П.",
+                  role: "Выпускник 2024",
+                  school: "Школа Будущего Онлайн",
+                  rating: 5,
+                  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
+                  text: "Совмещал учебу со спортом. Индивидуальный график позволил готовиться к соревнованиям.",
+                  results: "ЕГЭ: Физика - 92, Математика - 89",
+                  achievement: "КМС по плаванию + поступление в МГТУ",
+                  date: "2 недели назад"
+                },
+                {
+                  name: "Елена В.",
+                  role: "Мама ученицы",
+                  school: "Цифровая Школа",
+                  rating: 4,
+                  avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=64&h=64&fit=crop&crop=face",
+                  text: "Дочь изучает программирование параллельно с школьной программой. Отличная техническая поддержка.",
+                  results: "Средний балл 4.9, сертификат по Python",
+                  achievement: "Победитель хакатона",
+                  date: "3 недели назад"
+                },
+                {
+                  name: "Игорь М.",
+                  role: "Выпускник 2023",
+                  school: "Онлайн-школа Фоксфорд",
+                  rating: 5,
+                  avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face",
+                  text: "Переехал с родителями за границу, но смог продолжить учебу. Получил российский аттестат.",
+                  results: "ЕГЭ: все предметы сданы дистанционно",
+                  achievement: "Поступил в европейский университет",
+                  date: "1 месяц назад"
+                }
+              ].map((review, index) => (
+                <div key={index} className="flex-none w-96">
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                    <CardContent className="p-6">
+                      {/* Header with avatar and rating */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                          <img
+                            src={review.avatar}
+                            alt={review.name}
+                            className="w-12 h-12 rounded-full object-cover border-2 border-gray-200"
+                          />
+                          <div>
+                            <div className="font-semibold text-gray-900">{review.name}</div>
+                            <div className="text-sm text-gray-500">{review.role}</div>
+                            <div className="text-xs text-primary font-medium">{review.school}</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          {[...Array(review.rating)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                          {[...Array(5 - review.rating)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 text-gray-300" />
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Review text */}
+                      <p className="text-gray-700 mb-4 leading-relaxed">"{review.text}"</p>
+
+                      {/* Results */}
+                      <div className="bg-green-50 rounded-xl p-3 mb-4">
+                        <div className="text-xs font-semibold text-green-700 mb-1">РЕЗУЛЬТАТЫ:</div>
+                        <div className="text-sm text-green-800">{review.results}</div>
+                      </div>
+
+                      {/* Achievement */}
+                      <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-3 mb-4">
+                        <div className="text-xs font-semibold text-orange-700 mb-1">ДОСТИЖЕНИЕ:</div>
+                        <div className="text-sm text-orange-800 font-medium">{review.achievement}</div>
+                      </div>
+
+                      {/* Date */}
+                      <div className="text-xs text-gray-500">{review.date}</div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Statistics */}
+          <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Статистика успеха наших школ</h3>
+              <p className="text-gray-600">Реальные результаты выпускников за 2024 год</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">87%</div>
+                <div className="text-sm text-gray-600">Поступили в топ-100 ВУЗов России</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">76</div>
+                <div className="text-sm text-gray-600">Средний балл ЕГЭ выпускников</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">94%</div>
+                <div className="text-sm text-gray-600">Довольны качеством обучения</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 mb-2">340+</div>
+                <div className="text-sm text-gray-600">Победителей олимпиад</div>
+              </div>
+            </div>
           </div>
         </section>
 
