@@ -42,12 +42,16 @@ export const AISchoolSelector = () => {
       }
 
       const data = await response.json();
-      setRecommendations(data.schools || []);
       
-      toast({
-        title: "Готово!",
-        description: "Персональные рекомендации сформированы",
-      });
+      if (data.schools && Array.isArray(data.schools) && data.schools.length > 0) {
+        setRecommendations(data.schools);
+        toast({
+          title: "Готово!",
+          description: "Персональные рекомендации сформированы",
+        });
+      } else {
+        throw new Error("Не удалось получить список школ");
+      }
     } catch (error) {
       console.error("Error:", error);
       toast({
