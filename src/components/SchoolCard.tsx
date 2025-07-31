@@ -1,4 +1,4 @@
-import { Star, Users, Calendar, BookOpen, Phone, ExternalLink, ChevronDown, ChevronUp, Award, TrendingUp } from "lucide-react";
+import { Star, Users, Calendar, BookOpen, Phone, ExternalLink, ChevronDown, ChevronUp, Award, TrendingUp, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -213,14 +213,126 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
 
         {/* Expandable Features */}
         {expanded && (
-          <div className="mt-8 pt-8 border-t border-gray-100">
-            <h4 className="font-bold mb-4 text-lg">Ключевые особенности:</h4>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {school.features.map((feature, index) => (
-                <Badge key={index} variant="secondary" className="text-xs py-2 px-3 rounded-xl">
-                  {feature}
-                </Badge>
-              ))}
+          <div className="mt-8 pt-8 border-t border-gray-100 space-y-6">
+            {/* Key Features */}
+            <div>
+              <h4 className="font-bold mb-4 text-lg">Ключевые особенности:</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {school.features.map((feature, index) => (
+                  <Badge key={index} variant="secondary" className="text-xs py-2 px-3 rounded-xl">
+                    {feature}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Detailed Information for Selection */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Educational Details */}
+              <div className="bg-blue-50 rounded-2xl p-4">
+                <h5 className="font-semibold text-blue-800 mb-3 flex items-center">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Учебный процесс
+                </h5>
+                <div className="space-y-2 text-sm text-blue-700">
+                  <div>• Формат уроков: видео + интерактив</div>
+                  <div>• Длительность урока: 30-45 минут</div>
+                  <div>• Домашние задания: автопроверка + ручная</div>
+                  <div>• Контрольные работы: еженедельно</div>
+                  <div>• Прогресс-трекинг: детальная аналитика</div>
+                </div>
+              </div>
+
+              {/* Support & Communication */}
+              <div className="bg-green-50 rounded-2xl p-4">
+                <h5 className="font-semibold text-green-800 mb-3 flex items-center">
+                  <Users className="w-4 h-4 mr-2" />
+                  Поддержка и общение
+                </h5>
+                <div className="space-y-2 text-sm text-green-700">
+                  <div>• Персональный куратор: да</div>
+                  <div>• Техподдержка: 24/7 чат</div>
+                  <div>• Родительский контроль: еженедельные отчеты</div>
+                  <div>• Общение с одноклассниками: форумы, чаты</div>
+                  <div>• Консультации с учителями: по расписанию</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Technology & Platform */}
+            <div className="bg-purple-50 rounded-2xl p-4">
+              <h5 className="font-semibold text-purple-800 mb-3 flex items-center">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Платформа и технологии
+              </h5>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-purple-700">
+                <div>
+                  <div className="font-medium mb-2">Доступ к платформе:</div>
+                  <div>• Веб-версия</div>
+                  <div>• Мобильное приложение</div>
+                  <div>• Офлайн-режим материалов</div>
+                </div>
+                <div>
+                  <div className="font-medium mb-2">Интерактивные элементы:</div>
+                  <div>• Виртуальная доска</div>
+                  <div>• 3D-модели и симуляции</div>
+                  <div>• Игровые элементы</div>
+                </div>
+                <div>
+                  <div className="font-medium mb-2">Системные требования:</div>
+                  <div>• Интернет: от 5 Мбит/с</div>
+                  <div>• Устройство: ПК/планшет</div>
+                  <div>• Браузер: современный</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Preparation Results */}
+            <div className="bg-orange-50 rounded-2xl p-4">
+              <h5 className="font-semibold text-orange-800 mb-3 flex items-center">
+                <Award className="w-4 h-4 mr-2" />
+                Результаты подготовки к ЕГЭ
+              </h5>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-orange-600">78</div>
+                  <div className="text-xs text-orange-700">Средний балл русский язык</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-orange-600">72</div>
+                  <div className="text-xs text-orange-700">Средний балл математика</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-orange-600">89%</div>
+                  <div className="text-xs text-orange-700">Поступили в ВУЗы</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-orange-600">156</div>
+                  <div className="text-xs text-orange-700">Выпускников в 2024</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Important Selection Criteria */}
+            <div className="bg-gray-50 rounded-2xl p-4">
+              <h5 className="font-semibold text-gray-800 mb-3 flex items-center">
+                <CheckCircle className="w-4 h-4 mr-2" />
+                Важно при выборе
+              </h5>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                <div>
+                  <div className="font-medium text-green-600 mb-2">Сильные стороны:</div>
+                  <div>• Аккредитация действует до 2028 года</div>
+                  <div>• Лицензия без ограничений</div>
+                  <div>• Опыт дистанционного обучения: {new Date().getFullYear() - school.established_year} лет</div>
+                </div>
+                <div>
+                  <div className="font-medium text-orange-600 mb-2">На что обратить внимание:</div>
+                  <div>• Нагрузка: 4-6 часов в день</div>
+                  <div>• Требуется самодисциплина</div>
+                  <div>• Родительский контроль желателен</div>
+                </div>
+              </div>
             </div>
           </div>
         )}

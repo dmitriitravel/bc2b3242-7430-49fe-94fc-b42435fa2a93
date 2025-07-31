@@ -322,7 +322,8 @@ export const SupportingSection = () => {
                 Оплачивайте учёбу ребёнка без вреда для семейного бюджета
               </h3>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Множество способов оплаты и льготных программ делают онлайн-образование доступным для каждой семьи
+                Большинство онлайн-школ предлагают различные способы оплаты и льготные программы, 
+                делающие качественное образование доступным для каждой семьи
               </p>
             </div>
 
@@ -334,7 +335,8 @@ export const SupportingSection = () => {
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Материнский капитал</h4>
                 <p className="text-gray-600 mb-4">
-                  Можно использовать частично или полностью. Поможем с оформлением документов.
+                  Большинство школ принимают материнский капитал частично или полностью. 
+                  Школы помогают с оформлением документов.
                 </p>
                 <div className="text-sm text-green-700 bg-green-50 rounded-lg p-2">
                   Экономия до 631,000 ₽
@@ -348,7 +350,8 @@ export const SupportingSection = () => {
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Налоговый вычет до 33,800 ₽</h4>
                 <p className="text-gray-600 mb-4">
-                  Государство вернёт 13% от стоимости любого курса, а мы поможем оформить заявку.
+                  Государство возвращает 13% от стоимости курса. 
+                  Многие школы помогают оформить документы для получения вычета.
                 </p>
                 <div className="text-sm text-orange-700 bg-orange-50 rounded-lg p-2">
                   Возврат 13% от стоимости
@@ -362,7 +365,8 @@ export const SupportingSection = () => {
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Внутренняя и банковская рассрочка</h4>
                 <p className="text-gray-600 mb-4">
-                  Если в рассрочку, то без процентов — их берём на себя.
+                  Многие школы предлагают рассрочку без процентов 
+                  или партнерство с банками для выгодных условий.
                 </p>
                 <div className="text-sm text-blue-700 bg-blue-50 rounded-lg p-2">
                   0% переплаты
@@ -372,7 +376,7 @@ export const SupportingSection = () => {
 
             {/* Payment Methods */}
             <div className="bg-white rounded-2xl p-6">
-              <h4 className="text-xl font-bold text-center text-gray-900 mb-6">Принимаем все популярные способы оплаты</h4>
+              <h4 className="text-xl font-bold text-center text-gray-900 mb-6">Доступные способы оплаты в онлайн-школах</h4>
               <div className="flex flex-wrap justify-center items-center gap-6 text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
