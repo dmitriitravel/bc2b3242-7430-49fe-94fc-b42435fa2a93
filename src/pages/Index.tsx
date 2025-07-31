@@ -4,6 +4,7 @@ import { SchoolCard } from "@/components/SchoolCard";
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
 import { SupportingSection } from "@/components/SupportingSection";
+import { AISchoolSelector } from "@/components/AISchoolSelector";
 
 // Sample data for demonstration until database is ready
 const sampleSchools = [
@@ -317,6 +318,7 @@ const Index = () => {
         )}
       </main>
 
+      <AISchoolSelector />
       <SupportingSection />
     </div>
   );

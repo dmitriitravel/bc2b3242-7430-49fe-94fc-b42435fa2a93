@@ -56,17 +56,6 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Search Bar */}
-          <div className="max-w-md mx-auto mb-8">
-            <div className="relative">
-              <Search className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
-              <Input 
-                type="text" 
-                placeholder="Найти школу по названию..." 
-                className="pl-12 h-14 text-lg bg-white/95 backdrop-blur-sm border-0 shadow-lg rounded-2xl"
-              />
-            </div>
-          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -81,7 +70,7 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-4 h-auto border-white text-white hover:bg-white hover:text-primary"
+              className="text-lg px-8 py-4 h-auto border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-primary transition-all shadow-lg"
             >
               Бесплатная консультация
             </Button>
