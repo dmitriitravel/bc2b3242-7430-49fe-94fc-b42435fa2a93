@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Loader2, Sparkles } from "lucide-react";
+import { Brain, Loader2, Sparkles, Trophy, Medal, Award } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const AISchoolSelector = () => {
   const [requirements, setRequirements] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [recommendations, setRecommendations] = useState<string | null>(null);
+  const [recommendations, setRecommendations] = useState<string[] | null>(null);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,7 +42,7 @@ export const AISchoolSelector = () => {
       }
 
       const data = await response.json();
-      setRecommendations(data.recommendations || "Рекомендации будут готовы в ближайшее время");
+      setRecommendations(data.schools || []);
       
       toast({
         title: "Готово!",
@@ -117,13 +117,72 @@ export const AISchoolSelector = () => {
                 </Button>
               </form>
 
-              {recommendations && (
+              {recommendations && recommendations.length > 0 && (
                 <div className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/20">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">
-                    Ваши персональные рекомендации:
+                  <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
+                    <Trophy className="w-6 h-6" />
+                    Персональный рейтинг школ для вас:
                   </h3>
-                  <div className="prose prose-lg max-w-none text-foreground">
-                    <p className="whitespace-pre-wrap">{recommendations}</p>
+                  <div className="space-y-3">
+                    {recommendations.map((school, index) => (
+                      <div
+                        key={index}
+                        className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-300 ${
+                          index === 0
+                            ? "bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 shadow-lg scale-105"
+                            : index === 1
+                            ? "bg-gradient-to-r from-gray-50 to-slate-50 border border-gray-200"
+                            : index === 2
+                            ? "bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200"
+                            : "bg-white/50 border border-gray-100"
+                        }`}
+                      >
+                        <div
+                          className={`flex items-center justify-center w-12 h-12 rounded-full font-bold text-lg ${
+                            index === 0
+                              ? "bg-gradient-to-br from-yellow-400 to-amber-500 text-white shadow-lg"
+                              : index === 1
+                              ? "bg-gradient-to-br from-gray-400 to-slate-500 text-white"
+                              : index === 2
+                              ? "bg-gradient-to-br from-orange-400 to-amber-500 text-white"
+                              : "bg-gradient-to-br from-primary/20 to-secondary/20 text-primary"
+                          }`}
+                        >
+                          {index === 0 ? (
+                            <Trophy className="w-6 h-6" />
+                          ) : index === 1 ? (
+                            <Medal className="w-6 h-6" />
+                          ) : index === 2 ? (
+                            <Award className="w-6 h-6" />
+                          ) : (
+                            index + 1
+                          )}
+                        </div>
+                        <div className="flex-1">
+                          <h4
+                            className={`font-semibold ${
+                              index === 0 ? "text-xl text-amber-800" : "text-lg text-foreground"
+                            }`}
+                          >
+                            {school}
+                          </h4>
+                          {index === 0 && (
+                            <p className="text-sm text-amber-700 mt-1">
+                              🏆 Лучший выбор для ваших требований
+                            </p>
+                          )}
+                        </div>
+                        {index === 0 && (
+                          <div className="flex items-center gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <span key={i} className="text-yellow-400 text-lg">
+                                ⭐
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
