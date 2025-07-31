@@ -1,59 +1,96 @@
-import { Search, Award, Users, CheckCircle } from "lucide-react";
+import { Search, Award, Users, CheckCircle, Star, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-b from-primary/5 to-background py-16">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto">
-          Лучшие онлайн-школы для 11 класса в России
-        </h1>
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Независимый рейтинг аккредитованных онлайн-школ. Завершите 11 класс дистанционно 
-          с официальным аттестатом государственного образца.
-        </p>
+    <section className="relative overflow-hidden">
+      {/* Background with gradient */}
+      <div className="absolute inset-0 gradient-hero opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+      
+      {/* Floating elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute top-40 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse delay-700"></div>
+      <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-white/10 rounded-full blur-lg animate-pulse delay-1000"></div>
 
-        {/* Key Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-3xl mx-auto">
-          <div className="flex items-center justify-center space-x-2 text-primary">
-            <Award className="w-5 h-5" />
-            <span className="font-medium">Государственная аккредитация</span>
+      <div className="relative container mx-auto px-4 py-20 text-center text-white">
+        <div className="max-w-4xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+            <Star className="w-4 h-4 text-yellow-300" />
+            <span className="text-sm font-medium">Рейтинг №1 в России</span>
           </div>
-          <div className="flex items-center justify-center space-x-2 text-primary">
-            <Users className="w-5 h-5" />
-            <span className="font-medium">Более 50,000 выпускников</span>
-          </div>
-          <div className="flex items-center justify-center space-x-2 text-primary">
-            <CheckCircle className="w-5 h-5" />
-            <span className="font-medium">Проверенные отзывы</span>
-          </div>
-        </div>
 
-        {/* Search Bar */}
-        <div className="max-w-md mx-auto mb-8">
-          <div className="relative">
-            <Search className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
-            <Input 
-              type="text" 
-              placeholder="Найти школу по названию..." 
-              className="pl-10"
-            />
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Лучшие онлайн-школы
+            <br />
+            <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              для 11 класса
+            </span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Независимый рейтинг аккредитованных онлайн-школ. 
+            Завершите 11 класс дистанционно с официальным аттестатом 
+            государственного образца.
+          </p>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 max-w-3xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl font-bold">50,000+</div>
+              <div className="text-sm text-white/80">Выпускников</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl font-bold">2,500+</div>
+              <div className="text-sm text-white/80">Отзывов</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl font-bold">100%</div>
+              <div className="text-sm text-white/80">Аккредитация</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+              <div className="text-2xl font-bold">98%</div>
+              <div className="text-sm text-white/80">Поступают в ВУЗы</div>
+            </div>
           </div>
-        </div>
 
-        {/* CTA Button */}
-        <Button 
-          size="lg" 
-          className="text-lg px-8 py-6 h-auto"
-          onClick={() => document.getElementById('rating-section')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          Посмотреть рейтинг школ
-        </Button>
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
+              <Input 
+                type="text" 
+                placeholder="Найти школу по названию..." 
+                className="pl-12 h-14 text-lg bg-white/95 backdrop-blur-sm border-0 shadow-lg rounded-2xl"
+              />
+            </div>
+          </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-8 text-sm text-muted-foreground">
-          Основано на анализе более 2,500 отзывов • Обновлено в январе 2025
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Button 
+              size="lg" 
+              variant="accent"
+              className="text-lg px-10 py-4 h-auto shadow-lg"
+              onClick={() => document.getElementById('rating-section')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Посмотреть рейтинг школ
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-lg px-8 py-4 h-auto border-white text-white hover:bg-white hover:text-primary"
+            >
+              Бесплатная консультация
+            </Button>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="text-sm text-white/80">
+            Основано на анализе более 2,500 отзывов • Обновлено в январе 2025
+          </div>
         </div>
       </div>
     </section>

@@ -109,22 +109,31 @@ const Index = () => {
       <Header />
       <HeroSection />
       
-      <main className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Топ-10 онлайн-школ для 11 класса</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <main id="rating-section" className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full px-6 py-3 mb-6">
+            <span className="text-2xl">🏆</span>
+            <span className="font-semibold text-primary">Рейтинг 2025</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Топ-10 онлайн-школ для 11 класса
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Независимый рейтинг лучших онлайн-школ России для завершения 11 класса. 
             Все школы проверены и имеют государственную аккредитацию.
           </p>
         </div>
 
         {loading ? (
-          <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-            <p className="mt-4 text-muted-foreground">Загружаем школы...</p>
+          <div className="text-center py-20">
+            <div className="relative">
+              <div className="w-16 h-16 gradient-primary rounded-full animate-spin mx-auto mb-6"></div>
+              <div className="absolute inset-0 w-16 h-16 bg-white rounded-full mx-auto animate-ping opacity-75"></div>
+            </div>
+            <p className="text-xl text-muted-foreground">Загружаем лучшие школы для вас...</p>
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-8">
             {schools.map((school, index) => (
               <SchoolCard key={school.id} school={school} rank={index + 1} />
             ))}

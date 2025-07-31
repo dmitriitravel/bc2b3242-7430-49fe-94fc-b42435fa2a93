@@ -1,39 +1,52 @@
-import { Search, Phone, Mail } from "lucide-react";
+import { Search, Phone, Mail, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export const Header = () => {
   return (
-    <header className="bg-white border-b shadow-sm">
+    <header className="bg-white/95 backdrop-blur-sm border-b shadow-soft sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">ОШ</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 gradient-primary rounded-2xl flex items-center justify-center shadow-primary">
+              <span className="text-white font-bold text-lg">ОШ</span>
             </div>
-            <span className="font-bold text-xl">Онлайн Школы</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Онлайн Школы
+              </span>
+              <span className="text-xs text-muted-foreground">Рейтинг лучших школ России</span>
+            </div>
           </div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Рейтинг</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Все школы</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Как выбрать</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">О нас</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Контакты</a>
+          <nav className="hidden lg:flex items-center space-x-8">
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Рейтинг</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Все школы</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Как выбрать</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">О нас</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </nav>
 
-          {/* Contact Info */}
-          <div className="hidden lg:flex items-center space-x-4 text-sm">
-            <div className="flex items-center space-x-1 text-muted-foreground">
-              <Phone className="w-4 h-4" />
-              <span>8 (800) 123-45-67</span>
+          {/* Contact Info & CTA */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-center space-x-4 text-sm mr-4">
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Phone className="w-4 h-4" />
+                <span className="font-medium">8 (800) 123-45-67</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-1 text-muted-foreground">
-              <Mail className="w-4 h-4" />
-              <span>info@onlineschools.ru</span>
-            </div>
+            <Button variant="secondary" size="sm">
+              Бесплатная консультация
+            </Button>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="w-5 h-5" />
+            </Button>
           </div>
         </div>
       </div>
