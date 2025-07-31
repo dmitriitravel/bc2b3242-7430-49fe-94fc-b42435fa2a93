@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, Award, Mail, BarChart3, Users, Clock, TrendingUp, FileCheck, Star, ChevronDown, HelpCircle, GraduationCap, Calendar } from "lucide-react";
+import { CheckCircle, Shield, Award, Mail, BarChart3, Users, Clock, TrendingUp, FileCheck, Star, ChevronDown, HelpCircle, GraduationCap, Calendar, Home, Target, Zap, Globe, Heart, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -313,6 +313,163 @@ export const SupportingSection = () => {
                 <div className="text-3xl font-bold text-orange-600 mb-2">340+</div>
                 <div className="text-sm text-gray-600">Победителей олимпиад</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Online vs Traditional School Benefits */}
+        <section className="mb-20">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 rounded-full px-6 py-2 mb-6">
+              <Target className="w-5 h-5" />
+              <span className="font-semibold">Преимущества онлайн-образования</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Почему онлайн-школа лучше обычной?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Сравнительный анализ показывает значительные преимущества дистанционного образования 
+              для учеников 11 класса
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* Left Column - Traditional School Issues */}
+            <div className="bg-red-50 rounded-3xl p-8 border-l-4 border-red-500">
+              <h3 className="text-2xl font-bold text-red-800 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-red-200 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-red-600 font-bold">📚</span>
+                </div>
+                Обычная школа
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Фиксированное расписание 6-8 уроков в день",
+                  "Большие классы (25-30 учеников)",
+                  "Один темп обучения для всех",
+                  "Трата времени на дорогу (1-2 часа в день)",
+                  "Отвлекающие факторы и конфликты",
+                  "Ограниченная подготовка к ЕГЭ",
+                  "Устаревшие методики преподавания",
+                  "Невозможность совмещать с другой деятельностью"
+                ].map((issue, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <span className="text-red-500 mt-1">❌</span>
+                    <span className="text-red-800">{issue}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Online School Benefits */}
+            <div className="bg-green-50 rounded-3xl p-8 border-l-4 border-green-500">
+              <h3 className="text-2xl font-bold text-green-800 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-green-200 rounded-lg flex items-center justify-center mr-3">
+                  <Globe className="w-5 h-5 text-green-600" />
+                </div>
+                Онлайн-школа
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Гибкий график - учись когда удобно",
+                  "Индивидуальный подход к каждому ученику",
+                  "Персональный темп обучения",
+                  "Экономия 2+ часов в день на дороге",
+                  "Комфортная домашняя обстановка",
+                  "Интенсивная подготовка к ЕГЭ с экспертами",
+                  "Современные интерактивные методики",
+                  "Возможность совмещать со спортом/творчеством"
+                ].map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <span className="text-green-500 mt-1">✅</span>
+                    <span className="text-green-800">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Key Statistics Comparison */}
+          <div className="bg-white rounded-3xl p-8 shadow-soft border">
+            <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Статистика говорит сама за себя</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-green-600 mb-2">+12</div>
+                <div className="text-sm text-gray-600 mb-1">баллов ЕГЭ</div>
+                <div className="text-xs text-gray-500">в среднем выше</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-600 mb-2">3x</div>
+                <div className="text-sm text-gray-600 mb-1">больше времени</div>
+                <div className="text-xs text-gray-500">на подготовку к ЕГЭ</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-purple-600 mb-2">92%</div>
+                <div className="text-sm text-gray-600 mb-1">довольных</div>
+                <div className="text-xs text-gray-500">родителей</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-orange-600 mb-2">2 ч</div>
+                <div className="text-sm text-gray-600 mb-1">экономии</div>
+                <div className="text-xs text-gray-500">времени в день</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Ideal Student Profiles */}
+          <div className="mt-16">
+            <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
+              Онлайн-школа — идеальный выбор для тех, кто:
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: "🎯",
+                  title: "Профессионально занимается спортом или творчеством",
+                  description: "и хочет гибкого графика для тренировок"
+                },
+                {
+                  icon: "🏠",
+                  title: "Недоволен школой по месту жительства",
+                  description: "и хочет качественного образования"
+                },
+                {
+                  icon: "💊",
+                  title: "Часто болеет или легко утомляется",
+                  description: "и выбирает комфортное домашнее обучение"
+                },
+                {
+                  icon: "🌍",
+                  title: "Живет за границей",
+                  description: "но планирует получить российский аттестат"
+                },
+                {
+                  icon: "😔",
+                  title: "Столкнулся с травлей или токсичной школьной средой",
+                  description: "и ищет безопасную альтернативу"
+                },
+                {
+                  icon: "🧠",
+                  title: "Хочет ускоренного обучения",
+                  description: "и планирует закончить экстерном"
+                },
+                {
+                  icon: "🎓",
+                  title: "Нацелен на высокие баллы ЕГЭ",
+                  description: "для поступления в топ-ВУЗы"
+                },
+                {
+                  icon: "⚡",
+                  title: "Предпочитает самостоятельность",
+                  description: "в планировании учебного процесса"
+                }
+              ].map((profile, index) => (
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-gray-50">
+                  <div className="text-4xl mb-4">{profile.icon}</div>
+                  <h4 className="font-semibold text-gray-900 mb-2 leading-tight">{profile.title}</h4>
+                  <p className="text-sm text-gray-600">{profile.description}</p>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
