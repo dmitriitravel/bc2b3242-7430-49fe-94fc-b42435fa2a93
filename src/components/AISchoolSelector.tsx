@@ -282,7 +282,7 @@ export const AISchoolSelector = () => {
                               {school.description}
                             </p>
                           )}
-                          {index === 0 && (
+                          {index === 0 && school.name === "Skysmart" && (
                             <p className="text-sm text-amber-700 mt-1 font-medium">
                               🏆 Лучший выбор для ваших требований
                             </p>
