@@ -4,11 +4,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Loader2, Sparkles, Trophy, Medal, Award, ExternalLink, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const AISchoolSelector = () => {
   const [requirements, setRequirements] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [recommendations, setRecommendations] = useState<string[] | null>(null);
+  const [recommendations, setRecommendations] = useState<{name: string, description?: string}[] | null>(null);
   const { toast } = useToast();
 
   const quickQuestions = [
@@ -56,8 +57,22 @@ export const AISchoolSelector = () => {
 
       const data = await response.json();
       
-      if (data.schools && Array.isArray(data.schools) && data.schools.length > 0) {
-        setRecommendations(data.schools);
+      // Handle both old format (data.schools array) and new format (object with school names as keys)
+      let schoolsList = [];
+      
+      if (data.schools && Array.isArray(data.schools)) {
+        // Old format - array of school names
+        schoolsList = data.schools.map((name: string) => ({ name }));
+      } else if (typeof data === 'object' && data !== null) {
+        // New format - object with school names as keys and descriptions as values
+        schoolsList = Object.entries(data).map(([name, description], index) => ({
+          name,
+          description: index === 0 ? description as string : undefined
+        }));
+      }
+      
+      if (schoolsList.length > 0) {
+        setRecommendations(schoolsList);
         toast({
           title: "Готово!",
           description: "Персональные рекомендации сформированы",
@@ -153,7 +168,43 @@ export const AISchoolSelector = () => {
                 </Button>
               </form>
 
-              {recommendations && recommendations.length > 0 && (
+              {isLoading && (
+                <div className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/20">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center gap-3 mb-4">
+                      <Brain className="w-8 h-8 text-primary animate-pulse" />
+                      <span className="text-xl font-semibold text-primary">ИИ анализирует ваши требования...</span>
+                    </div>
+                    <div className="flex justify-center items-center gap-2 mb-6">
+                      <div className="w-3 h-3 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                      <div className="w-3 h-3 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                      <div className="w-3 h-3 bg-primary rounded-full animate-bounce"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {[...Array(5)].map((_, index) => (
+                      <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-white/50 border border-gray-100">
+                        <Skeleton className="w-12 h-12 rounded-full" />
+                        <div className="flex-1 space-y-2">
+                          <Skeleton className="h-5 w-3/4" />
+                          {index === 0 && <Skeleton className="h-3 w-full" />}
+                          {index === 0 && <Skeleton className="h-3 w-2/3" />}
+                        </div>
+                        {index === 0 && (
+                          <div className="flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <Skeleton key={i} className="w-5 h-5 rounded" />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {recommendations && recommendations.length > 0 && !isLoading && (
                 <div className="mt-8 p-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/20">
                   <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
                     <Trophy className="w-6 h-6" />
@@ -200,10 +251,15 @@ export const AISchoolSelector = () => {
                               index === 0 ? "text-xl text-amber-800" : "text-lg text-foreground"
                             }`}
                           >
-                            {school}
+                            {school.name}
                           </h4>
+                          {index === 0 && school.description && (
+                            <p className="text-sm text-amber-700 mt-2 leading-relaxed">
+                              {school.description}
+                            </p>
+                          )}
                           {index === 0 && (
-                            <p className="text-sm text-amber-700 mt-1">
+                            <p className="text-sm text-amber-700 mt-1 font-medium">
                               🏆 Лучший выбор для ваших требований
                             </p>
                           )}
