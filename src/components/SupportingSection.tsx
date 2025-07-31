@@ -1,57 +1,156 @@
-import { CheckCircle, Shield, Award, Mail } from "lucide-react";
+import { CheckCircle, Shield, Award, Mail, BarChart3, Users, Clock, TrendingUp, FileCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export const SupportingSection = () => {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="container mx-auto px-4">
         {/* Methodology Section */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Как мы составляем рейтинг</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Наша методика основана на объективных критериях и реальных отзывах учеников
+        <section className="mb-20">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 rounded-full px-6 py-2 mb-6">
+              <BarChart3 className="w-5 h-5" />
+              <span className="font-semibold">Прозрачная методология</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Как мы составляем рейтинг
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Наша методика основана на объективных критериях, всестороннем анализе 
+              и реальных отзывах учеников и их родителей
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-6 h-6 text-primary" />
+          {/* Main methodology cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Shield className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Проверка аккредитации</h3>
-                <p className="text-sm text-muted-foreground">
-                  Все школы имеют государственную лицензию и аккредитацию
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Проверка аккредитации</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Все школы имеют государственную лицензию и аккредитацию. 
+                  Проверяем документы в Рособрнадзоре.
                 </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>Лицензия на образовательную деятельность</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>Государственная аккредитация</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>Право на выдачу аттестатов</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
+            <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-600"></div>
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Users className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Анализ отзывов</h3>
-                <p className="text-sm text-muted-foreground">
-                  Изучаем отзывы учеников и родителей на независимых платформах
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Анализ отзывов</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Изучаем отзывы учеников и родителей на независимых платформах. 
+                  Проверяем достоверность каждого отзыва.
                 </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <Star className="w-4 h-4" />
+                    <span>Анализ 2,500+ проверенных отзывов</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <FileCheck className="w-4 h-4" />
+                    <span>Верификация через соцсети</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-green-600">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>Динамика удовлетворенности</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-6 h-6 text-primary" />
+            <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-red-500"></div>
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <Award className="w-8 h-8 text-orange-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Качество образования</h3>
-                <p className="text-sm text-muted-foreground">
-                  Оцениваем программы, методики и результаты ЕГЭ выпускников
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Качество образования</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Оцениваем программы, методики и результаты ЕГЭ выпускников. 
+                  Анализируем статистику поступления в ВУЗы.
                 </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center justify-center space-x-2 text-orange-600">
+                    <BarChart3 className="w-4 h-4" />
+                    <span>Средний балл ЕГЭ выпускников</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-orange-600">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>% поступления в топ ВУЗы</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2 text-orange-600">
+                    <Award className="w-4 h-4" />
+                    <span>Победы в олимпиадах</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="bg-white rounded-3xl p-8 shadow-soft border border-gray-100">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Гарантии объективности</h3>
+              <p className="text-gray-600">Наши принципы работы обеспечивают честный и независимый рейтинг</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Clock className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-1">Регулярное обновление</h4>
+                <p className="text-sm text-gray-600">Рейтинг обновляется ежемесячно</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Shield className="w-6 h-6 text-green-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-1">Независимость</h4>
+                <p className="text-sm text-gray-600">Не принимаем плату за позицию</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <FileCheck className="w-6 h-6 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-1">Проверенные данные</h4>
+                <p className="text-sm text-gray-600">Все факты подтверждены документально</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <TrendingUp className="w-6 h-6 text-orange-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-1">Прозрачность</h4>
+                <p className="text-sm text-gray-600">Публикуем методологию расчета</p>
+              </div>
+            </div>
           </div>
         </section>
 
