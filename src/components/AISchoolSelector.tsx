@@ -253,7 +253,7 @@ export const AISchoolSelector = () => {
                           >
                             {school.name}
                           </h4>
-                          {index === 0 && school.description && (
+                          {index === 0 && school.name === "Skysmart" && school.description && (
                             <p className="text-sm text-amber-700 mt-2 leading-relaxed">
                               {school.description}
                             </p>
@@ -264,7 +264,33 @@ export const AISchoolSelector = () => {
                             </p>
                           )}
                         </div>
-                        {index === 0 && (
+                        {index === 0 && school.name === "Skysmart" && (
+                          <div className="flex flex-col items-end gap-2">
+                            <div className="flex items-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <span key={i} className="text-yellow-400 text-lg">
+                                  ⭐
+                                </span>
+                              ))}
+                            </div>
+                            <Button 
+                              asChild
+                              size="sm"
+                              className="bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-md hover:shadow-lg transition-all duration-300"
+                            >
+                              <a 
+                                href="https://skysmart.ru/homeschooling" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1"
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                                Перейти на сайт
+                              </a>
+                            </Button>
+                          </div>
+                        )}
+                        {index === 0 && school.name !== "Skysmart" && (
                           <div className="flex items-center gap-1">
                             {[...Array(5)].map((_, i) => (
                               <span key={i} className="text-yellow-400 text-lg">
