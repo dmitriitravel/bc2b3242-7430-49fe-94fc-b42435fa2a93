@@ -293,7 +293,7 @@ export const SupportingSection = () => {
           <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Статистика успеха наших школ</h3>
-              <p className="text-gray-600">Реальные результаты выпускников за 2024 год</p>
+              <p className="text-gray-600">Реальные результаты выпускников за 2025 год</p>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -312,6 +312,110 @@ export const SupportingSection = () => {
               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-600 mb-2">340+</div>
                 <div className="text-sm text-gray-600">Победителей олимпиад</div>
+              </div>
+            </div>
+          </div>
+          {/* Payment Options Section */}
+          <div className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 border border-blue-200">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Оплачивайте учёбу ребёнка без вреда для семейного бюджета
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Множество способов оплаты и льготных программ делают онлайн-образование доступным для каждой семьи
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              {/* Maternal Capital */}
+              <div className="bg-white rounded-2xl p-6 text-center shadow-soft">
+                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-8 h-8 text-green-600" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Материнский капитал</h4>
+                <p className="text-gray-600 mb-4">
+                  Можно использовать частично или полностью. Поможем с оформлением документов.
+                </p>
+                <div className="text-sm text-green-700 bg-green-50 rounded-lg p-2">
+                  Экономия до 631,000 ₽
+                </div>
+              </div>
+
+              {/* Tax Deduction */}
+              <div className="bg-white rounded-2xl p-6 text-center shadow-soft">
+                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <FileCheck className="w-8 h-8 text-orange-600" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Налоговый вычет до 33,800 ₽</h4>
+                <p className="text-gray-600 mb-4">
+                  Государство вернёт 13% от стоимости любого курса, а мы поможем оформить заявку.
+                </p>
+                <div className="text-sm text-orange-700 bg-orange-50 rounded-lg p-2">
+                  Возврат 13% от стоимости
+                </div>
+              </div>
+
+              {/* Flexible Payment */}
+              <div className="bg-white rounded-2xl p-6 text-center shadow-soft">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-blue-600" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Внутренняя и банковская рассрочка</h4>
+                <p className="text-gray-600 mb-4">
+                  Если в рассрочку, то без процентов — их берём на себя.
+                </p>
+                <div className="text-sm text-blue-700 bg-blue-50 rounded-lg p-2">
+                  0% переплаты
+                </div>
+              </div>
+            </div>
+
+            {/* Payment Methods */}
+            <div className="bg-white rounded-2xl p-6">
+              <h4 className="text-xl font-bold text-center text-gray-900 mb-6">Принимаем все популярные способы оплаты</h4>
+              <div className="flex flex-wrap justify-center items-center gap-6 text-gray-600">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <span className="text-blue-600 font-bold">💳</span>
+                  </div>
+                  <span>Банковские карты</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                    <span className="text-green-600 font-bold">💰</span>
+                  </div>
+                  <span>Материнский капитал</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <span className="text-purple-600 font-bold">🏦</span>
+                  </div>
+                  <span>Банковские переводы</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <span className="text-orange-600 font-bold">📱</span>
+                  </div>
+                  <span>Электронные кошельки</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Special Offers */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 text-white">
+                <h5 className="text-lg font-bold mb-2">Скидки для многодетных семей</h5>
+                <p className="text-green-100 mb-3">Дополнительная скидка до 20% на обучение</p>
+                <div className="text-sm bg-white/20 rounded-lg p-2 inline-block">
+                  Предоставьте справку о многодетности
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl p-6 text-white">
+                <h5 className="text-lg font-bold mb-2">Поддержка малообеспеченных семей</h5>
+                <p className="text-blue-100 mb-3">Индивидуальные условия оплаты и скидки</p>
+                <div className="text-sm bg-white/20 rounded-lg p-2 inline-block">
+                  Обратитесь к менеджеру за консультацией
+                </div>
               </div>
             </div>
           </div>
@@ -334,34 +438,7 @@ export const SupportingSection = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {/* Left Column - Traditional School Issues */}
-            <div className="bg-red-50 rounded-3xl p-8 border-l-4 border-red-500">
-              <h3 className="text-2xl font-bold text-red-800 mb-6 flex items-center">
-                <div className="w-8 h-8 bg-red-200 rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-red-600 font-bold">📚</span>
-                </div>
-                Обычная школа
-              </h3>
-              <div className="space-y-4">
-                {[
-                  "Фиксированное расписание 6-8 уроков в день",
-                  "Большие классы (25-30 учеников)",
-                  "Один темп обучения для всех",
-                  "Трата времени на дорогу (1-2 часа в день)",
-                  "Отвлекающие факторы и конфликты",
-                  "Ограниченная подготовка к ЕГЭ",
-                  "Устаревшие методики преподавания",
-                  "Невозможность совмещать с другой деятельностью"
-                ].map((issue, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <span className="text-red-500 mt-1">❌</span>
-                    <span className="text-red-800">{issue}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column - Online School Benefits */}
+            {/* Left Column - Online School Benefits */}
             <div className="bg-green-50 rounded-3xl p-8 border-l-4 border-green-500">
               <h3 className="text-2xl font-bold text-green-800 mb-6 flex items-center">
                 <div className="w-8 h-8 bg-green-200 rounded-lg flex items-center justify-center mr-3">
@@ -383,6 +460,33 @@ export const SupportingSection = () => {
                   <div key={index} className="flex items-start space-x-3">
                     <span className="text-green-500 mt-1">✅</span>
                     <span className="text-green-800">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Traditional School Issues */}
+            <div className="bg-red-50 rounded-3xl p-8 border-l-4 border-red-500">
+              <h3 className="text-2xl font-bold text-red-800 mb-6 flex items-center">
+                <div className="w-8 h-8 bg-red-200 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-red-600 font-bold">📚</span>
+                </div>
+                Обычная школа
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Фиксированное расписание 6-8 уроков в день",
+                  "Большие классы (25-30 учеников)",
+                  "Один темп обучения для всех",
+                  "Трата времени на дорогу (1-2 часа в день)",
+                  "Отвлекающие факторы и конфликты",
+                  "Ограниченная подготовка к ЕГЭ",
+                  "Устаревшие методики преподавания",
+                  "Невозможность совмещать с другой деятельностью"
+                ].map((issue, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <span className="text-red-500 mt-1">❌</span>
+                    <span className="text-red-800">{issue}</span>
                   </div>
                 ))}
               </div>

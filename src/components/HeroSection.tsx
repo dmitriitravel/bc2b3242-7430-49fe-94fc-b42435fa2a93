@@ -89,7 +89,7 @@ export const HeroSection = () => {
 
           {/* Trust Indicators */}
           <div className="text-sm text-white/80">
-            Основано на анализе более 2,500 отзывов • Обновлено в январе 2025
+            Основано на анализе более 2,500 отзывов • Обновлено в августе 2025
           </div>
         </div>
       </div>
