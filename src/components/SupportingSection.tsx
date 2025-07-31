@@ -1,8 +1,8 @@
-import { CheckCircle, Shield, Award, Mail, BarChart3, Users, Clock, TrendingUp, FileCheck, Star } from "lucide-react";
+import { CheckCircle, Shield, Award, Mail, BarChart3, Users, Clock, TrendingUp, FileCheck, Star, ChevronDown, HelpCircle, GraduationCap, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const SupportingSection = () => {
   return (
@@ -317,23 +317,175 @@ export const SupportingSection = () => {
           </div>
         </section>
 
-        {/* Newsletter Section */}
+        {/* FAQ Section */}
         <section className="text-center">
-          <div className="max-w-md mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Получайте новости</h2>
-            <p className="text-muted-foreground mb-6">
-              Подпишитесь на обновления рейтинга и полезные материалы об онлайн-образовании
-            </p>
-            <div className="flex gap-2">
-              <Input type="email" placeholder="Ваш email" className="flex-1" />
-              <Button className="flex items-center space-x-1">
-                <Mail className="w-4 h-4" />
-                <span>Подписаться</span>
-              </Button>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 rounded-full px-6 py-2 mb-6">
+              <HelpCircle className="w-5 h-5" />
+              <span className="font-semibold">Ответы на вопросы</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">
-              Не более 1 письма в неделю. Отписаться можно в любой момент.
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Часто задаваемые вопросы
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Всё, что нужно знать о переходе в онлайн-школу для завершения 11 класса
             </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="accreditation" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span>Получу ли я официальный аттестат государственного образца?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  Да, абсолютно. Все школы в нашем рейтинге имеют государственную лицензию и аккредитацию. 
+                  Выпускники получают аттестат о среднем общем образовании государственного образца, который 
+                  ничем не отличается от аттестата обычной школы. Этот документ принимается всеми российскими 
+                  и зарубежными ВУЗами без ограничений.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="transition" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                      <Calendar className="w-5 h-5 text-green-600" />
+                    </div>
+                    <span>Можно ли перейти в онлайн-школу в середине 11 класса?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  Да, переход возможен в любое время учебного года. Процедура занимает 1-2 недели. Вам нужно 
+                  взять справку о промежуточной аттестации из текущей школы, подать заявление в онлайн-школу 
+                  и дождаться зачисления. Академическая задолженность ликвидируется в индивидуальном порядке, 
+                  часто через дополнительные занятия или тестирования.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="ege" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <GraduationCap className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <span>Как проходит ЕГЭ для учеников онлайн-школ?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  ЕГЭ сдается точно так же, как и в обычных школах - в специальных пунктах проведения экзаменов (ППЭ). 
+                  Онлайн-школа помогает с регистрацией и назначает ППЭ по месту вашего проживания. Никаких отличий 
+                  в процедуре нет. Многие онлайн-школы показывают более высокие результаты ЕГЭ благодаря 
+                  индивидуальному подходу и интенсивной подготовке.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="schedule" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <span>Сколько времени в день нужно заниматься?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  В среднем 4-6 часов в день при обычном темпе обучения. Если вы выбираете ускоренное обучение 
+                  (экстернат), время увеличивается до 6-8 часов. Главное преимущество - гибкость: можете 
+                  распределить нагрузку по дням недели как удобно, заниматься утром или вечером, 
+                  совмещать с работой, спортом или творчеством.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="cost" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
+                      <BarChart3 className="w-5 h-5 text-red-600" />
+                    </div>
+                    <span>Сколько стоит обучение в онлайн-школе?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  Стоимость варьируется от 2,500 до 35,000 рублей в месяц в зависимости от школы и пакета услуг. 
+                  Базовые программы стоят 2,500-8,000 рублей, премиум с индивидуальными занятиями - 15,000-35,000 рублей. 
+                  Многие школы предлагают рассрочку, скидки для многодетных семей и возможность оплачивать 
+                  материнским капиталом. Часто это дешевле репетиторов для подготовки к ЕГЭ.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="technology" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-indigo-600" />
+                    </div>
+                    <span>Какие технические требования для обучения?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  Минимальные требования: компьютер или планшет, стабильный интернет от 5 Мбит/с, 
+                  веб-камера и микрофон для онлайн-уроков. Большинство платформ работают через браузер, 
+                  не требуя установки специального ПО. Мобильные приложения доступны для iOS и Android. 
+                  Техническая поддержка помогает с настройкой в первые дни обучения.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="support" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center">
+                      <Users className="w-5 h-5 text-pink-600" />
+                    </div>
+                    <span>Есть ли поддержка и кураторы для учеников?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  Да, в большинстве школ есть персональные кураторы, которые помогают с планированием учебы, 
+                  мотивацией и решением возникающих вопросов. Также работают психологи, техническая поддержка 
+                  и методисты. Связь поддерживается через чаты, видеозвонки и горячую линию. 
+                  Родители получают регулярные отчеты о прогрессе ребенка.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="documents" className="bg-white rounded-2xl border border-gray-200 px-6">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center">
+                      <FileCheck className="w-5 h-5 text-yellow-600" />
+                    </div>
+                    <span>Какие документы нужны для поступления?</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
+                  Для поступления нужны: личное дело из текущей школы (или справка о промежуточной аттестации), 
+                  копия паспорта ученика, СНИЛС, медицинская карта, 2 фотографии 3×4, заявление от родителей. 
+                  Если переходите из-за границы - справка о пройденных предметах с апостилем. 
+                  Процесс оформления обычно занимает 3-7 рабочих дней.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            {/* CTA after FAQ */}
+            <div className="mt-16 bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 text-white text-center">
+              <h3 className="text-2xl font-bold mb-4">Остались вопросы?</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Получите бесплатную консультацию по выбору онлайн-школы
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="accent" size="lg" className="bg-white text-primary hover:bg-gray-100">
+                  Бесплатная консультация
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                  Сравнить школы
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </div>
