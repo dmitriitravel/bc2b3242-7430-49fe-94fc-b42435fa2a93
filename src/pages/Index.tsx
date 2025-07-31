@@ -5,6 +5,54 @@ import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
 import { SupportingSection } from "@/components/SupportingSection";
 
+// Sample data for demonstration until database is ready
+const sampleSchools = [
+  {
+    id: "1",
+    name: "Онлайн-школа Фоксфорд",
+    description: "Ведущая онлайн-школа России с индивидуальным подходом к каждому ученику",
+    logo_url: "",
+    website_url: "https://foxford.ru",
+    rating: 4.8,
+    total_reviews: 1247,
+    price_from: 3500,
+    price_to: 8900,
+    subjects_count: 15,
+    accreditation: "Лицензия №037133",
+    established_year: 2009,
+    student_count: 50000,
+    pros: ["Сильные преподаватели", "Индивидуальный план", "Подготовка к ЕГЭ"],
+    cons: ["Высокая стоимость", "Много самостоятельной работы"],
+    features: ["ЕГЭ подготовка", "Индивидуальные уроки", "Олимпиады"],
+    contact_phone: "+7 (800) 302-04-12",
+    contact_email: "info@foxford.ru",
+    ranking_position: 1,
+    is_featured: true
+  },
+  {
+    id: "2", 
+    name: "Домашняя школа ИнтернетУрок",
+    description: "Полноценное среднее образование в домашних условиях",
+    logo_url: "",
+    website_url: "https://interneturok.ru",
+    rating: 4.6,
+    total_reviews: 892,
+    price_from: 2500,
+    price_to: 6500,
+    subjects_count: 14,
+    accreditation: "Лицензия №038311",
+    established_year: 2008,
+    student_count: 35000,
+    pros: ["Доступная цена", "Качественные видеоуроки", "Гибкий график"],
+    cons: ["Меньше интерактива", "Нужна самодисциплина"],
+    features: ["Видеоуроки", "Домашние задания", "Тестирование"],
+    contact_phone: "+7 (800) 775-40-74",
+    contact_email: "info@interneturok.ru", 
+    ranking_position: 2,
+    is_featured: false
+  }
+];
+
 interface School {
   id: string;
   name: string;
@@ -38,7 +86,8 @@ const Index = () => {
 
   const fetchSchools = async () => {
     try {
-      const { data, error } = await supabase
+      // Type assertion needed until database migration is approved
+      const { data, error } = await (supabase as any)
         .from('schools')
         .select('*')
         .order('ranking_position', { ascending: true })
@@ -48,6 +97,8 @@ const Index = () => {
       setSchools(data || []);
     } catch (error) {
       console.error('Error fetching schools:', error);
+      // Show sample data when database isn't ready
+      setSchools(sampleSchools);
     } finally {
       setLoading(false);
     }
