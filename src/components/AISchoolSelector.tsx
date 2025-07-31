@@ -126,16 +126,18 @@ export const AISchoolSelector = () => {
                   <Zap className="w-5 h-5 text-primary" />
                   Частые ситуации при выборе онлайн-школы:
                 </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3">
                   {quickQuestions.map((question, index) => (
                     <Button
                       key={index}
                       variant="outline"
-                      className="text-left h-auto p-3 text-sm justify-start hover:bg-primary/5 border-primary/20"
+                      className="text-left h-auto p-4 text-sm justify-start hover:bg-primary/5 border-primary/20 whitespace-normal break-words"
                       onClick={() => handleQuickSelect(question)}
                       disabled={isLoading}
                     >
-                      {question}
+                      <span className="text-left leading-relaxed">
+                        {question}
+                      </span>
                     </Button>
                   ))}
                 </div>
