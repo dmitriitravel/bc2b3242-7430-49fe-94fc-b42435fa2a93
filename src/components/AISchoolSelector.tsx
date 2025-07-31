@@ -132,7 +132,7 @@ export const AISchoolSelector = () => {
                     <Button
                       key={index}
                       variant="outline"
-                      className="text-left h-auto p-3 text-sm justify-start hover:bg-primary/5 border-primary/20 whitespace-normal break-words"
+                      className="text-left h-auto p-3 text-sm justify-start hover:bg-primary/15 hover:border-primary/40 border-primary/20 whitespace-normal break-words transition-all duration-200"
                       onClick={() => handleQuickSelect(question)}
                       disabled={isLoading}
                     >
