@@ -747,9 +747,8 @@ export const SupportingSection = () => {
                   Бесплатная консультация
                 </Button>
                 <Button 
-                  variant="outline" 
                   size="lg" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold transition-all duration-200"
+                  className="bg-orange-500 text-white border-0 hover:bg-orange-600 font-semibold transition-all duration-200"
                   onClick={() => {
                     const aiSection = document.getElementById('ai-school-selector');
                     if (aiSection) {
