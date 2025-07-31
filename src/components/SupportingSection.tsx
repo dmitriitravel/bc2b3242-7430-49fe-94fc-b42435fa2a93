@@ -746,7 +746,17 @@ export const SupportingSection = () => {
                 <Button variant="accent" size="lg" className="bg-white text-primary hover:bg-gray-50 hover:text-primary/90 transition-all duration-200">
                   Бесплатная консультация
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/20 hover:border-white/80 transition-all duration-200">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold transition-all duration-200"
+                  onClick={() => {
+                    const aiSection = document.getElementById('ai-school-selector');
+                    if (aiSection) {
+                      aiSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                >
                   Сравнить школы
                 </Button>
               </div>
