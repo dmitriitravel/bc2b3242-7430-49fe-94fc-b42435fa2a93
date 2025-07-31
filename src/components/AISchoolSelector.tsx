@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Loader2, Sparkles, Trophy, Medal, Award } from "lucide-react";
+import { Brain, Loader2, Sparkles, Trophy, Medal, Award, ExternalLink, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const AISchoolSelector = () => {
@@ -10,6 +10,19 @@ export const AISchoolSelector = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [recommendations, setRecommendations] = useState<string[] | null>(null);
   const { toast } = useToast();
+
+  const quickQuestions = [
+    "Ребёнок подвергается буллингу в школе, нужна безопасная среда для обучения",
+    "Нужен гибкий график из-за занятий спортом/творчеством",
+    "Семья часто переезжает, нужна стабильность в образовании",
+    "Ребёнок опережает программу, нужны углублённые курсы",
+    "Проблемы с социализацией в обычной школе",
+    "Подготовка к ЕГЭ/ОГЭ с индивидуальным подходом"
+  ];
+
+  const handleQuickSelect = (question: string) => {
+    setRequirements(question);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,6 +106,25 @@ export const AISchoolSelector = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-primary" />
+                  Частые ситуации при выборе онлайн-школы:
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {quickQuestions.map((question, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      className="text-left h-auto p-3 text-sm justify-start hover:bg-primary/5 border-primary/20"
+                      onClick={() => handleQuickSelect(question)}
+                      disabled={isLoading}
+                    >
+                      {question}
+                    </Button>
+                  ))}
+                </div>
+              </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <Textarea
                   value={requirements}
@@ -187,6 +219,23 @@ export const AISchoolSelector = () => {
                         )}
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6 flex justify-center">
+                    <Button 
+                      asChild
+                      size="lg"
+                      className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <a 
+                        href="https://skysmart.ru/homeschooling" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        Перейти на Skysmart
+                      </a>
+                    </Button>
                   </div>
                 </div>
               )}
