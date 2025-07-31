@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Loader2, Sparkles, Trophy, Medal, Award, ExternalLink, Zap } from "lucide-react";
+import { Brain, Loader2, Sparkles, Trophy, Medal, Award, ExternalLink, Zap, ChevronDown, ChevronUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -10,6 +10,7 @@ export const AISchoolSelector = () => {
   const [requirements, setRequirements] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [recommendations, setRecommendations] = useState<{name: string, description?: string}[] | null>(null);
+  const [showAllQuestions, setShowAllQuestions] = useState(false);
   const { toast } = useToast();
 
   const quickQuestions = [
@@ -126,12 +127,12 @@ export const AISchoolSelector = () => {
                   <Zap className="w-5 h-5 text-primary" />
                   Частые ситуации при выборе онлайн-школы:
                 </h4>
-                <div className="grid grid-cols-1 gap-3">
-                  {quickQuestions.map((question, index) => (
+                <div className="space-y-3">
+                  {quickQuestions.slice(0, showAllQuestions ? quickQuestions.length : 3).map((question, index) => (
                     <Button
                       key={index}
                       variant="outline"
-                      className="text-left h-auto p-4 text-sm justify-start hover:bg-primary/5 border-primary/20 whitespace-normal break-words"
+                      className="text-left h-auto p-3 text-sm justify-start hover:bg-primary/5 border-primary/20 whitespace-normal break-words"
                       onClick={() => handleQuickSelect(question)}
                       disabled={isLoading}
                     >
@@ -140,6 +141,27 @@ export const AISchoolSelector = () => {
                       </span>
                     </Button>
                   ))}
+                  
+                  {quickQuestions.length > 3 && (
+                    <Button
+                      variant="ghost"
+                      className="w-full text-primary hover:text-primary/80 hover:bg-primary/5 font-medium"
+                      onClick={() => setShowAllQuestions(!showAllQuestions)}
+                      disabled={isLoading}
+                    >
+                      {showAllQuestions ? (
+                        <>
+                          <ChevronUp className="w-4 h-4 mr-2" />
+                          Скрыть дополнительные варианты
+                        </>
+                      ) : (
+                        <>
+                          <ChevronDown className="w-4 h-4 mr-2" />
+                          Показать еще ({quickQuestions.length - 3})
+                        </>
+                      )}
+                    </Button>
+                  )}
                 </div>
               </div>
               <form onSubmit={handleSubmit} className="space-y-6">
