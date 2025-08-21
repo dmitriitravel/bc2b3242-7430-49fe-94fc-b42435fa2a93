@@ -13,7 +13,7 @@ const sampleSchools = [
     name: "Skysmart",
     description: "Онлайн-школа с индивидуальными уроками 1 на 1 и интерактивными технологиями. 150,000 заданий и партнерство с Просвещение",
     logo_url: "",
-    website_url: "https://skysmart.ru/homeschooling",
+    website_url: "https://skysmart.ru/homeschooling/11-klass-online",
     rating: 4.9,
     total_reviews: 1856,
     price_from: 4500,
