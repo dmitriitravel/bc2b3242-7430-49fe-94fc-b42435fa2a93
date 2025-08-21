@@ -23,7 +23,7 @@ export const Header = () => {
           {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <a href="/" className="text-foreground hover:text-primary transition-colors font-medium">Все школы</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Как выбрать</a>
+            <a href="/blog/algoritm-vybora-shkoly" className="text-foreground hover:text-primary transition-colors font-medium">Как выбрать</a>
             <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">О нас</a>
             <a href="/contacts" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </nav>
