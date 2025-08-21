@@ -22,8 +22,7 @@ export const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Рейтинг</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Все школы</a>
+            <a href="/" className="text-foreground hover:text-primary transition-colors font-medium">Все школы</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Как выбрать</a>
             <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">О нас</a>
             <a href="/contacts" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
@@ -31,12 +30,6 @@ export const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-4 text-sm mr-4">
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span className="font-medium">8 (800) 123-45-67</span>
-              </div>
-            </div>
             <Button 
               variant="secondary" 
               size="sm"
