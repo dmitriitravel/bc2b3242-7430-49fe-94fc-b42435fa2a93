@@ -131,8 +131,7 @@ export const AISchoolSelector = () => {
                   {quickQuestions.slice(0, showAllQuestions ? quickQuestions.length : 3).map((question, index) => (
                     <Button
                       key={index}
-                      variant="outline"
-                      className="text-left h-auto p-3 text-sm justify-start hover:bg-primary/15 hover:border-primary/40 border-primary/20 whitespace-normal break-words transition-all duration-200"
+                      className="text-left h-auto p-3 text-sm justify-start bg-orange-500 text-white hover:bg-orange-600 border-0 whitespace-normal break-words transition-all duration-200"
                       onClick={() => handleQuickSelect(question)}
                       disabled={isLoading}
                     >
@@ -144,8 +143,7 @@ export const AISchoolSelector = () => {
                   
                   {quickQuestions.length > 3 && (
                     <Button
-                      variant="ghost"
-                      className="w-full text-primary hover:text-primary/80 hover:bg-primary/5 font-medium"
+                      className="w-full bg-orange-500 text-white hover:bg-orange-600 border-0 font-medium"
                       onClick={() => setShowAllQuestions(!showAllQuestions)}
                       disabled={isLoading}
                     >

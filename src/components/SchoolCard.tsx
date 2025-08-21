@@ -204,10 +204,9 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
 
           <div className="flex gap-2">
             <Button 
-              variant="outline" 
               size="sm"
               onClick={() => setExpanded(!expanded)}
-              className="text-xs"
+              className="text-xs bg-orange-500 text-white hover:bg-orange-600 border-0"
             >
               {expanded ? 'Скрыть' : 'Показать все особенности'}
             </Button>

@@ -69,8 +69,7 @@ export const HeroSection = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
-              className="text-lg px-8 py-4 h-auto border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-primary transition-all shadow-lg"
+              className="text-lg px-8 py-4 h-auto bg-orange-500 text-white hover:bg-orange-600 border-0 transition-all shadow-lg"
               onClick={() => document.getElementById('ai-school-selector')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Бесплатная консультация
