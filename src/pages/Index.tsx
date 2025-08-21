@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
 import { SchoolCard } from "@/components/SchoolCard";
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
@@ -254,32 +253,8 @@ interface School {
 }
 
 const Index = () => {
-  const [schools, setSchools] = useState<School[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchSchools();
-  }, []);
-
-  const fetchSchools = async () => {
-    try {
-      // Type assertion needed until database migration is approved
-      const { data, error } = await (supabase as any)
-        .from('schools')
-        .select('*')
-        .order('ranking_position', { ascending: true })
-        .limit(10);
-
-      if (error) throw error;
-      setSchools(data || []);
-    } catch (error) {
-      console.error('Error fetching schools:', error);
-      // Show sample data when database isn't ready
-      setSchools(sampleSchools);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [schools] = useState<School[]>(sampleSchools);
+  const [loading] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
