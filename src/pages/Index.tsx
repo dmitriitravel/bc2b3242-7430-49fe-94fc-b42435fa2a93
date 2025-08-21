@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SchoolCard } from "@/components/SchoolCard";
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
@@ -558,6 +558,22 @@ interface School {
 const Index = () => {
   const [schools] = useState<School[]>(sampleSchools);
   const [loading] = useState(false);
+
+  useEffect(() => {
+    // Set page title
+    document.title = "Лучшие онлайн школы 11 класс 2025 ⭐ Рейтинг и сравнение";
+    
+    // Set or update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Независимый рейтинг ТОП-10 лучших онлайн школ России для 11 класса. Сравнение цен, отзывов, аккредитации. Государственные аттестаты, подготовка к ЕГЭ. Выберите лучшую онлайн школу!');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Независимый рейтинг ТОП-10 лучших онлайн школ России для 11 класса. Сравнение цен, отзывов, аккредитации. Государственные аттестаты, подготовка к ЕГЭ. Выберите лучшую онлайн школу!';
+      document.head.appendChild(meta);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
