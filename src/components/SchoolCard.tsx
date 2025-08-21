@@ -227,16 +227,9 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Button variant="outline" size="sm" className="font-semibold">
-              Подробнее
-            </Button>
             <Button size="sm" className="flex items-center space-x-2 font-semibold">
               <ExternalLink className="w-4 h-4" />
               <span>Перейти на сайт</span>
-            </Button>
-            <Button variant="secondary" size="sm" className="flex items-center space-x-2 font-semibold">
-              <Phone className="w-4 h-4" />
-              <span>Консультация</span>
             </Button>
           </div>
         </div>
@@ -317,31 +310,6 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
               </div>
             </div>
 
-            {/* Preparation Results - Dynamic based on school data */}
-            <div className="bg-orange-50 rounded-2xl p-4">
-              <h5 className="font-semibold text-orange-800 mb-3 flex items-center">
-                <Award className="w-4 h-4 mr-2" />
-                Результаты подготовки к ЕГЭ
-              </h5>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.russian_avg || "—"}</div>
-                  <div className="text-xs text-orange-700">Средний балл русский язык</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.math_avg || "—"}</div>
-                  <div className="text-xs text-orange-700">Средний балл математика</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.university_admission || "—"}</div>
-                  <div className="text-xs text-orange-700">Поступили в ВУЗы</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.graduates_2024?.split(' ')[0] || "—"}</div>
-                  <div className="text-xs text-orange-700">Выпускников в 2024</div>
-                </div>
-              </div>
-            </div>
 
             {/* Important Selection Criteria */}
             <div className="bg-gray-50 rounded-2xl p-4">
