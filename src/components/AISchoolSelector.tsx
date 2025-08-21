@@ -300,11 +300,12 @@ export const AISchoolSelector = () => {
                             </div>
                             <Button 
                               asChild
+                              variant="orange"
                               size="sm"
-                              className="bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-md hover:shadow-lg transition-all duration-300"
+                              className="shadow-md hover:shadow-lg transition-all duration-300"
                             >
                               <a 
-                                href="https://skysmart.ru/homeschooling" 
+                                href="https://skysmart.ru/homeschooling/11-klass-online" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-1"
@@ -330,11 +331,12 @@ export const AISchoolSelector = () => {
                   <div className="mt-6 flex justify-center">
                     <Button 
                       asChild
+                      variant="orange"
                       size="lg"
-                      className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       <a 
-                        href="https://skysmart.ru/homeschooling" 
+                        href="https://skysmart.ru/homeschooling/11-klass-online" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2"
