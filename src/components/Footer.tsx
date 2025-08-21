@@ -15,9 +15,12 @@ export const Footer = () => {
                 Онлайн Школы
               </span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-3">
               Независимый рейтинг лучших онлайн-школ России для завершения 11 класса. 
               Помогаем найти идеальную школу для вашего ребенка.
+            </p>
+            <p className="text-muted-foreground text-xs">
+              © {new Date().getFullYear()} Онлайн Школы. Все права защищены.
             </p>
           </div>
 
@@ -69,20 +72,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Онлайн Школы. Все права защищены.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-              Условия использования
-            </a>
-            <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-              Политика конфиденциальности
-            </a>
-          </div>
-        </div>
       </div>
     </footer>
   );
