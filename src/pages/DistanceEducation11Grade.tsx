@@ -51,7 +51,7 @@ const DistanceEducation11Grade = () => {
         />
 
         <article className="prose prose-lg max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-center mb-8 text-foreground">
             Дистанционное образование для 11 класса: преимущества
           </h1>
 
