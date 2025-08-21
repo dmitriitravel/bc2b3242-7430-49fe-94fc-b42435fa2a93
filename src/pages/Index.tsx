@@ -29,6 +29,8 @@ const sampleSchools = [
     contact_email: "info@skysmart.ru",
     ranking_position: 1,
     is_featured: true,
+    use_link_button: true,
+    link_text: "Онлайн школа для 11 класса",
     unique_details: {
       educational_process: {
         lesson_format: "видео + интерактив (1 на 1 с учителем)",
