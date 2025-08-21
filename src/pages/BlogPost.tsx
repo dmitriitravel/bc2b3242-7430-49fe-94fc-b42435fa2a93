@@ -31,8 +31,10 @@ const BlogPost = () => {
             
             {/* Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Быстрый практический алгоритм выбора 
-              <span className="bg-gradient-primary bg-clip-text text-transparent"> онлайн-школы</span> 
+              Быстрый практический алгоритм выбора{" "}
+              <span className="gradient-primary bg-clip-text text-transparent">
+                онлайн-школы
+              </span>{" "}
               для ребёнка
             </h1>
             

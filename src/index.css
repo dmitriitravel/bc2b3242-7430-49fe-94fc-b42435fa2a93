@@ -105,6 +105,8 @@
 @layer components {
   .gradient-primary {
     background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
   }
   
   .gradient-secondary {
