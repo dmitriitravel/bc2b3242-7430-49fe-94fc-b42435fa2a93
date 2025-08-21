@@ -714,6 +714,51 @@ const Index = () => {
               Читать статью →
             </span>
           </a>
+
+          <a
+            href="/blog/algoritm-vybora-shkoly"
+            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
+          >
+            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              Алгоритм выбора онлайн-школы
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Пошаговое руководство по выбору подходящей онлайн-школы для вашего ребенка
+            </p>
+            <span className="text-primary font-medium group-hover:underline">
+              Читать статью →
+            </span>
+          </a>
+
+          <a
+            href="/blog/finish-11th-grade-online"
+            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
+          >
+            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              Экстернат онлайн для 11 класса
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Как закончить 11 класс экстерном в онлайн-формате за короткий срок
+            </p>
+            <span className="text-primary font-medium group-hover:underline">
+              Читать статью →
+            </span>
+          </a>
+
+          <a
+            href="/blog/11-class-for-adults-online-school"
+            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
+          >
+            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              Онлайн-школа 11 класса для взрослых
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Возможности получения среднего образования в онлайн-формате для взрослых
+            </p>
+            <span className="text-primary font-medium group-hover:underline">
+              Читать статью →
+            </span>
+          </a>
         </div>
       </section>
 
