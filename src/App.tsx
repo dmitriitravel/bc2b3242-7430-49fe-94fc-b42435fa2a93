@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BlogPost from "./pages/BlogPost";
 import FreeOnlineGrade11 from "./pages/FreeOnlineGrade11";
+import ExternatOnline from "./pages/ExternatOnline";
 import AboutUs from "./pages/AboutUs";
 import Contacts from "./pages/Contacts";
 import TermsOfService from "./pages/TermsOfService";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog/algoritm-vybora-shkoly" element={<BlogPost />} />
           <Route path="/blog/besplatnoe-obuchenie-11-klass" element={<FreeOnlineGrade11 />} />
+          <Route path="/blog/finish-11th-grade-online" element={<ExternatOnline />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/terms" element={<TermsOfService />} />
