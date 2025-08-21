@@ -15,6 +15,7 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import OnlineSchoolReviews from "./pages/OnlineSchoolReviews";
 import OnlineCertificate from "./pages/OnlineCertificate";
+import BestOnlineSchoolsEGE from "./pages/BestOnlineSchoolsEGE";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/blog/online-grade-11-moscow" element={<MoscowOnlineGrade11 />} />
           <Route path="/blog/online-school-reviews" element={<OnlineSchoolReviews />} />
           <Route path="/blog/certificate-online-11th-grade" element={<OnlineCertificate />} />
+          <Route path="/blog/best-online-schools-ege-11th-grade" element={<BestOnlineSchoolsEGE />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/terms" element={<TermsOfService />} />
