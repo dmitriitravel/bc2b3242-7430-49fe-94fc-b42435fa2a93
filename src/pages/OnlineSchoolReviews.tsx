@@ -2,12 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const OnlineSchoolReviews = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <Button
           variant="ghost"
@@ -350,6 +353,7 @@ const OnlineSchoolReviews = () => {
           </div>
         </article>
       </div>
+      <Footer />
     </div>
   );
 };
