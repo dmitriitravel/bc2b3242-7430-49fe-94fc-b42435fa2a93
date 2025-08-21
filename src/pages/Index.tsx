@@ -221,7 +221,7 @@ const sampleSchools = [
     name: "Школа Будущего Онлайн",
     description: "Онлайн-школа с фокусом на современные образовательные технологии и обучение в малых группах",
     logo_url: "",
-    website_url: "https://school-future.ru",
+    website_url: "https://school-of-future.online",
     rating: 4.5,
     total_reviews: 567,
     price_from: 3800,

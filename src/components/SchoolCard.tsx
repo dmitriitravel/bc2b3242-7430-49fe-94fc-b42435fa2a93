@@ -227,7 +227,11 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Button size="sm" className="flex items-center space-x-2 font-semibold">
+            <Button 
+              size="sm" 
+              className="flex items-center space-x-2 font-semibold"
+              onClick={() => window.open(school.website_url, '_blank')}
+            >
               <ExternalLink className="w-4 h-4" />
               <span>Перейти на сайт</span>
             </Button>
