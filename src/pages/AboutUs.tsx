@@ -72,13 +72,13 @@ const AboutUs = () => {
               Наши эксперты проанализируют потребности вашего ребенка и подберут 
               несколько подходящих вариантов онлайн-школ
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-colors">
-                Получить консультацию
-              </button>
-              <button className="px-8 py-3 border border-border text-foreground rounded-xl font-medium hover:bg-muted transition-colors">
+            <div className="flex justify-center">
+              <a 
+                href="/" 
+                className="px-8 py-3 bg-orange-500 text-white rounded-xl font-medium hover:bg-orange-600 transition-colors"
+              >
                 Посмотреть рейтинг
-              </button>
+              </a>
             </div>
           </div>
         </div>
