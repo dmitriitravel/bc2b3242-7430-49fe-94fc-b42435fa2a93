@@ -227,14 +227,26 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Button 
-              size="sm" 
-              className="flex items-center space-x-2 font-semibold"
-              onClick={() => window.open(school.website_url, '_blank')}
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>Перейти на сайт</span>
-            </Button>
+            {school.name === "Skysmart" ? (
+              <a 
+                href={school.website_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3 space-x-2 font-semibold"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>Перейти на сайт</span>
+              </a>
+            ) : (
+              <Button 
+                size="sm" 
+                className="flex items-center space-x-2 font-semibold"
+                onClick={() => window.open(school.website_url, '_blank')}
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>Перейти на сайт</span>
+              </Button>
+            )}
           </div>
         </div>
 
