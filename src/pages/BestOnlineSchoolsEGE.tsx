@@ -59,7 +59,7 @@ const BestOnlineSchoolsEGE = () => {
       </script>
 
       {/* Target Audience Block */}
-      <div className="bg-gradient-primary text-white p-8 rounded-xl">
+      <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white p-8 rounded-xl shadow-lg">
         <h3 className="text-xl font-semibold mb-4">Для кого эта статья:</h3>
         <ul className="space-y-2">
           <li className="flex items-start gap-3">
@@ -82,7 +82,7 @@ const BestOnlineSchoolsEGE = () => {
       </div>
 
       {/* Key Conclusions Block */}
-      <div className="bg-gradient-secondary text-white p-8 rounded-xl">
+      <div className="bg-gradient-to-br from-emerald-600 to-teal-600 text-white p-8 rounded-xl shadow-lg">
         <h3 className="text-xl font-semibold mb-4">Ключевые выводы из статьи:</h3>
         <ul className="space-y-2">
           <li className="flex items-start gap-3">
