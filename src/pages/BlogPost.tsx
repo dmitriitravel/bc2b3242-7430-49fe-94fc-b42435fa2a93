@@ -1,27 +1,67 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Header } from "@/components/Header";
 
 const BlogPost = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+      <Header />
+      
       <div className="container mx-auto px-4 py-8">
-        {/* Back button */}
-        <Link to="/">
-          <Button variant="ghost" className="mb-8 hover:bg-primary/10">
+        {/* Breadcrumb Navigation */}
+        <nav className="mb-8">
+          <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Назад к главной
-          </Button>
-        </Link>
+            Главная
+          </Link>
+          <span className="mx-2 text-muted-foreground">/</span>
+          <span className="text-foreground">Блог</span>
+        </nav>
 
-        {/* Article header */}
-        <article className="max-w-4xl mx-auto">
-          <header className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
-              Быстрый практический алгоритм выбора онлайн-школы для ребёнка
+        {/* Blog Header */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-elegant border border-primary/10">
+            {/* Category Badge */}
+            <div className="mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
+                Руководство по выбору
+              </span>
+            </div>
+            
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Быстрый практический алгоритм выбора 
+              <span className="bg-gradient-primary bg-clip-text text-transparent"> онлайн-школы</span> 
+              для ребёнка
             </h1>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto"></div>
-          </header>
+            
+            {/* Subtitle */}
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl">
+              Пошаговый алгоритм, который поможет выбрать качественную онлайн-школу за 6 простых шагов. 
+              Проверенные критерии оценки и практические советы от экспертов.
+            </p>
+            
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                <span>21 августа 2024</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span>15 мин чтения</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <User className="w-4 h-4" />
+                <span>Команда экспертов</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Article Content */}
+        <article className="max-w-4xl mx-auto">
 
           {/* Content */}
           <div className="prose prose-lg max-w-none">
