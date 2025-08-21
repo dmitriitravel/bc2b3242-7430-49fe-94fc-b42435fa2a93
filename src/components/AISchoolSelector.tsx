@@ -175,7 +175,7 @@ export const AISchoolSelector = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full text-lg py-6 h-auto shadow-lg"
+                  className="w-full text-lg py-6 h-auto shadow-lg bg-orange-500 text-white hover:bg-orange-600 border-0"
                   disabled={isLoading || !requirements.trim()}
                 >
                   {isLoading ? (

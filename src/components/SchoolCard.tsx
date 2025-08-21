@@ -217,7 +217,7 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
                 href={school.website_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs font-medium transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-8 px-3"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs font-medium transition-colors bg-orange-500 text-white hover:bg-orange-600 h-8 px-3"
               >
                 <ExternalLink className="w-3 h-3 mr-1" />
                 {school.link_text || "Перейти на сайт"}
@@ -225,7 +225,7 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
             ) : (
               <Button 
                 size="sm" 
-                className="text-xs"
+                className="text-xs bg-orange-500 text-white hover:bg-orange-600 border-0"
                 onClick={() => window.open(school.website_url, '_blank')}
               >
                 <ExternalLink className="w-3 h-3 mr-1" />
