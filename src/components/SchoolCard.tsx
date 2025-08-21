@@ -204,9 +204,10 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
 
           <div className="flex gap-2">
             <Button 
+              variant="orange"
               size="sm"
               onClick={() => setExpanded(!expanded)}
-              className="text-xs bg-orange-500 text-white hover:bg-orange-600 border-0"
+              className="text-xs"
             >
               {expanded ? 'Скрыть' : 'Показать все особенности'}
             </Button>
@@ -223,8 +224,9 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
               </a>
             ) : (
               <Button 
+                variant="orange"
                 size="sm" 
-                className="text-xs bg-orange-500 text-white hover:bg-orange-600 border-0"
+                className="text-xs"
                 onClick={() => window.open(school.website_url, '_blank')}
               >
                 <ExternalLink className="w-3 h-3 mr-1" />

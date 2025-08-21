@@ -131,7 +131,8 @@ export const AISchoolSelector = () => {
                   {quickQuestions.slice(0, showAllQuestions ? quickQuestions.length : 3).map((question, index) => (
                     <Button
                       key={index}
-                      className="text-left h-auto p-3 text-sm justify-start bg-orange-500 text-white hover:bg-orange-600 border-0 whitespace-normal break-words transition-all duration-200"
+                      variant="orange"
+                      className="text-left h-auto p-3 text-sm justify-start whitespace-normal break-words transition-all duration-200"
                       onClick={() => handleQuickSelect(question)}
                       disabled={isLoading}
                     >
@@ -143,7 +144,8 @@ export const AISchoolSelector = () => {
                   
                   {quickQuestions.length > 3 && (
                     <Button
-                      className="w-full bg-orange-500 text-white hover:bg-orange-600 border-0 font-medium"
+                      variant="orange"
+                      className="w-full font-medium"
                       onClick={() => setShowAllQuestions(!showAllQuestions)}
                       disabled={isLoading}
                     >
@@ -172,8 +174,9 @@ export const AISchoolSelector = () => {
                 />
                 <Button 
                   type="submit" 
+                  variant="orange"
                   size="lg" 
-                  className="w-full text-lg py-6 h-auto shadow-lg bg-orange-500 text-white hover:bg-orange-600 border-0"
+                  className="w-full text-lg py-6 h-auto shadow-lg"
                   disabled={isLoading || !requirements.trim()}
                 >
                   {isLoading ? (
