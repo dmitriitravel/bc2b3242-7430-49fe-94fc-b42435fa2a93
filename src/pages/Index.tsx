@@ -28,7 +28,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 333-23-43",
     contact_email: "info@skysmart.ru",
     ranking_position: 1,
-    is_featured: true
+    is_featured: true,
+    unique_details: {
+      educational_process: {
+        lesson_format: "видео + интерактив (1 на 1 с учителем)",
+        lesson_duration: "50 минут (25 минут для младших классов)",
+        homework: "автопроверка + ручная проверка",
+        control_works: "регулярные пробные экзамены",
+        progress_tracking: "детальная аналитика с записями уроков"
+      },
+      support: {
+        personal_curator: "да (тьюторы и бадди)",
+        tech_support: "24/7 чат",
+        parent_control: "ежемесячные отчеты + доступ к записям",
+        student_communication: "чат с преподавателем и другими учениками",
+        teacher_consultations: "по расписанию + чат"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: true,
+        offline_mode: true,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: true
+      },
+      exam_results: {
+        russian_avg: "85-90",
+        math_avg: "85-90",
+        university_admission: "не раскрывается",
+        graduates_2024: "не раскрывается"
+      }
+    }
   },
   {
     id: "2",
@@ -50,7 +80,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 302-04-12",
     contact_email: "info@foxford.ru",
     ranking_position: 2,
-    is_featured: true
+    is_featured: true,
+    unique_details: {
+      educational_process: {
+        lesson_format: "видео + интерактив (групповые вебинары до 20 человек)",
+        lesson_duration: "45-60 минут",
+        homework: "автоматическая проверка + обратная связь",
+        control_works: "регулярные тестирования",
+        progress_tracking: "электронный дневник с аналитикой"
+      },
+      support: {
+        personal_curator: "да (для домашней школы)",
+        tech_support: "круглосуточная поддержка",
+        parent_control: "еженедельные отчеты",
+        student_communication: "чат курса + социальные активности",
+        teacher_consultations: "по расписанию"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: true,
+        offline_mode: true,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: true
+      },
+      exam_results: {
+        russian_avg: "не раскрывается",
+        math_avg: "не раскрывается",
+        university_admission: "не раскрывается",
+        graduates_2024: "не раскрывается"
+      }
+    }
   },
   {
     id: "3", 
@@ -72,7 +132,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 775-40-74",
     contact_email: "info@interneturok.ru", 
     ranking_position: 3,
-    is_featured: true
+    is_featured: true,
+    unique_details: {
+      educational_process: {
+        lesson_format: "видеоуроки + консультации",
+        lesson_duration: "15-20 минут видеоурок",
+        homework: "ручная проверка учителями",
+        control_works: "контрольные с прокторингом",
+        progress_tracking: "электронный журнал"
+      },
+      support: {
+        personal_curator: "да (персональный наставник - опция)",
+        tech_support: "15 минут время отклика",
+        parent_control: "еженедельные или ежемесячные отчеты",
+        student_communication: "ограниченное",
+        teacher_consultations: "индивидуальные консультации"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: false,
+        offline_mode: true,
+        virtual_board: false,
+        simulations_3d: false,
+        gaming_elements: false
+      },
+      exam_results: {
+        russian_avg: "не раскрывается",
+        math_avg: "не раскрывается",
+        university_admission: "не раскрывается",
+        graduates_2024: "не раскрывается"
+      }
+    }
   },
   {
     id: "4",
@@ -94,7 +184,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 500-80-11",
     contact_email: "info@online-licey1.ru",
     ranking_position: 4,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "живые онлайн-занятия + видеоуроки",
+        lesson_duration: "40-45 минут",
+        homework: "автопроверка + ручная проверка",
+        control_works: "регулярные тестирования",
+        progress_tracking: "отслеживание прогресса с обратной связью"
+      },
+      support: {
+        personal_curator: "да",
+        tech_support: "онлайн-консультации",
+        parent_control: "регулярные отчеты",
+        student_communication: "интерактивные онлайн-уроки",
+        teacher_consultations: "индивидуальная поддержка"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: false,
+        offline_mode: true,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: true
+      },
+      exam_results: {
+        russian_avg: "86",
+        math_avg: "86",
+        university_admission: "95%",
+        graduates_2024: "12,000 учеников ежегодно"
+      }
+    }
   },
   {
     id: "5",
@@ -116,7 +236,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 123-45-67",
     contact_email: "info@school-future.ru",
     ranking_position: 5,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "онлайн-занятия в малых группах",
+        lesson_duration: "45 минут",
+        homework: "смешанная проверка",
+        control_works: "регулярные",
+        progress_tracking: "система отслеживания прогресса"
+      },
+      support: {
+        personal_curator: "да",
+        tech_support: "онлайн-поддержка",
+        parent_control: "отчеты об успеваемости",
+        student_communication: "групповые занятия",
+        teacher_consultations: "по запросу"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: false,
+        offline_mode: false,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: false
+      },
+      exam_results: {
+        russian_avg: "не раскрывается",
+        math_avg: "не раскрывается",
+        university_admission: "не раскрывается",
+        graduates_2024: "не раскрывается"
+      }
+    }
   },
   {
     id: "6",
@@ -138,7 +288,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 234-56-78",
     contact_email: "info@umschool.net",
     ranking_position: 6,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "интерактивные вебинары (сотни учеников одновременно)",
+        lesson_duration: "90 минут",
+        homework: "автопроверка через приложение",
+        control_works: "регулярные пробники",
+        progress_tracking: "детальная аналитика успеваемости"
+      },
+      support: {
+        personal_curator: "да",
+        tech_support: "круглосуточная",
+        parent_control: "еженедельные отчеты",
+        student_communication: "активные сообщества (500,000+ участников)",
+        teacher_consultations: "через кураторов"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: true,
+        offline_mode: true,
+        virtual_board: true,
+        simulations_3d: true,
+        gaming_elements: true
+      },
+      exam_results: {
+        russian_avg: "82.16",
+        math_avg: "82.16",
+        university_admission: "не раскрывается",
+        graduates_2024: "500,000+ студентов с 2016 года, 4,159 стобалльников"
+      }
+    }
   },
   {
     id: "7",
@@ -160,7 +340,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 345-67-89",
     contact_email: "info@tetrika-school.ru",
     ranking_position: 7,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "индивидуальные занятия 1 на 1 + мини-группы до 5 человек",
+        lesson_duration: "50 минут",
+        homework: "индивидуальная проверка",
+        control_works: "по индивидуальному плану",
+        progress_tracking: "отчеты после каждого урока"
+      },
+      support: {
+        personal_curator: "да",
+        tech_support: "быстрая техподдержка",
+        parent_control: "отчеты по итогам каждого урока",
+        student_communication: "ограниченное (мини-группы)",
+        teacher_consultations: "личный чат + видеосвязь"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: false,
+        offline_mode: false,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: false
+      },
+      exam_results: {
+        russian_avg: "не раскрывается",
+        math_avg: "не раскрывается",
+        university_admission: "88% получили бюджетные места",
+        graduates_2024: "1.8 млн персональных занятий проведено, 9,600+ учеников с 80+ баллами"
+      }
+    }
   },
   {
     id: "8",
@@ -182,7 +392,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 456-78-90",
     contact_email: "info@bit-school.ru",
     ranking_position: 8,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "онлайн-уроки в группах до 15 человек, 3 смены",
+        lesson_duration: "40 минут (1 класс) до 45 минут",
+        homework: "автопроверка + ручная",
+        control_works: "регулярные тестирования",
+        progress_tracking: "система оценивания с индивидуальными маршрутами"
+      },
+      support: {
+        personal_curator: "да (тьютор + психолог)",
+        tech_support: "техническая поддержка",
+        parent_control: "доступ к записям уроков",
+        student_communication: "чат, голосования, совместная работа на доске",
+        teacher_consultations: "личный чат + консультации"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: false,
+        offline_mode: true,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: true
+      },
+      exam_results: {
+        russian_avg: "не раскрывается",
+        math_avg: "не раскрывается",
+        university_admission: "87% в топовые вузы",
+        graduates_2024: "3,000+ выпускников в 20+ странах"
+      }
+    }
   },
   {
     id: "9",
@@ -204,7 +444,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 567-89-01",
     contact_email: "info@algoritm.org",
     ranking_position: 9,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "индивидуальные и групповые занятия",
+        lesson_duration: "45-50 минут",
+        homework: "ручная проверка + обратная связь",
+        control_works: "контрольные + международные тесты",
+        progress_tracking: "детальные отчеты по прогрессу"
+      },
+      support: {
+        personal_curator: "да (академический куратор)",
+        tech_support: "рабочие часы поддержка",
+        parent_control: "ежемесячные отчеты + родительские собрания",
+        student_communication: "академические группы",
+        teacher_consultations: "регулярные индивидуальные встречи"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: false,
+        offline_mode: true,
+        virtual_board: true,
+        simulations_3d: false,
+        gaming_elements: false
+      },
+      exam_results: {
+        russian_avg: "75-80",
+        math_avg: "75-80",
+        university_admission: "85% в российские и зарубежные вузы",
+        graduates_2024: "около 1,000 выпускников"
+      }
+    }
   },
   {
     id: "10",
@@ -226,7 +496,37 @@ const sampleSchools = [
     contact_phone: "+7 (800) 678-90-12",
     contact_email: "info@uchi.ru",
     ranking_position: 10,
-    is_featured: false
+    is_featured: false,
+    unique_details: {
+      educational_process: {
+        lesson_format: "интерактивные задания + видеоуроки",
+        lesson_duration: "20-30 минут модули",
+        homework: "автоматическая проверка",
+        control_works: "интерактивные тесты",
+        progress_tracking: "игровая аналитика прогресса"
+      },
+      support: {
+        personal_curator: "нет (групповая поддержка)",
+        tech_support: "онлайн-чат + FAQ",
+        parent_control: "еженедельные отчеты + уведомления",
+        student_communication: "рейтинги и соревнования",
+        teacher_consultations: "ограниченные консультации"
+      },
+      platform: {
+        web_version: true,
+        mobile_app: true,
+        offline_mode: false,
+        virtual_board: false,
+        simulations_3d: false,
+        gaming_elements: true
+      },
+      exam_results: {
+        russian_avg: "60-65",
+        math_avg: "60-65",
+        university_admission: "75%",
+        graduates_2024: "около 800 выпускников"
+      }
+    }
   }
 ];
 

@@ -25,6 +25,36 @@ interface School {
   contact_email: string;
   ranking_position: number;
   is_featured: boolean;
+  unique_details?: {
+    educational_process: {
+      lesson_format: string;
+      lesson_duration: string;
+      homework: string;
+      control_works: string;
+      progress_tracking: string;
+    };
+    support: {
+      personal_curator: string;
+      tech_support: string;
+      parent_control: string;
+      student_communication: string;
+      teacher_consultations: string;
+    };
+    platform: {
+      web_version: boolean;
+      mobile_app: boolean;
+      offline_mode: boolean;
+      virtual_board: boolean;
+      simulations_3d: boolean;
+      gaming_elements: boolean;
+    };
+    exam_results: {
+      russian_avg: string;
+      math_avg: string;
+      university_admission: string;
+      graduates_2024: string;
+    };
+  };
 }
 
 interface SchoolCardProps {
@@ -226,7 +256,7 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
               </div>
             </div>
 
-            {/* Detailed Information for Selection */}
+            {/* Detailed Information for Selection - Dynamic based on school data */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Educational Details */}
               <div className="bg-blue-50 rounded-2xl p-4">
@@ -235,11 +265,11 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
                   Учебный процесс
                 </h5>
                 <div className="space-y-2 text-sm text-blue-700">
-                  <div>• Формат уроков: видео + интерактив</div>
-                  <div>• Длительность урока: 30-45 минут</div>
-                  <div>• Домашние задания: автопроверка + ручная</div>
-                  <div>• Контрольные работы: еженедельно</div>
-                  <div>• Прогресс-трекинг: детальная аналитика</div>
+                  <div>• Формат уроков: {school.unique_details?.educational_process.lesson_format || "видео + интерактив"}</div>
+                  <div>• Длительность урока: {school.unique_details?.educational_process.lesson_duration || "30-45 минут"}</div>
+                  <div>• Домашние задания: {school.unique_details?.educational_process.homework || "автопроверка + ручная"}</div>
+                  <div>• Контрольные работы: {school.unique_details?.educational_process.control_works || "еженедельно"}</div>
+                  <div>• Прогресс-трекинг: {school.unique_details?.educational_process.progress_tracking || "детальная аналитика"}</div>
                 </div>
               </div>
 
@@ -250,11 +280,11 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
                   Поддержка и общение
                 </h5>
                 <div className="space-y-2 text-sm text-green-700">
-                  <div>• Персональный куратор: да</div>
-                  <div>• Техподдержка: 24/7 чат</div>
-                  <div>• Родительский контроль: еженедельные отчеты</div>
-                  <div>• Общение с одноклассниками: форумы, чаты</div>
-                  <div>• Консультации с учителями: по расписанию</div>
+                  <div>• Персональный куратор: {school.unique_details?.support.personal_curator || "да"}</div>
+                  <div>• Техподдержка: {school.unique_details?.support.tech_support || "24/7 чат"}</div>
+                  <div>• Родительский контроль: {school.unique_details?.support.parent_control || "еженедельные отчеты"}</div>
+                  <div>• Общение с одноклассниками: {school.unique_details?.support.student_communication || "форумы, чаты"}</div>
+                  <div>• Консультации с учителями: {school.unique_details?.support.teacher_consultations || "по расписанию"}</div>
                 </div>
               </div>
             </div>
@@ -268,26 +298,26 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-purple-700">
                 <div>
                   <div className="font-medium mb-2">Доступ к платформе:</div>
-                  <div>• Веб-версия</div>
-                  <div>• Мобильное приложение</div>
-                  <div>• Офлайн-режим материалов</div>
+                  <div>• Веб-версия{school.unique_details?.platform.web_version ? " ✓" : " ✗"}</div>
+                  <div>• Мобильное приложение{school.unique_details?.platform.mobile_app ? " ✓" : " ✗"}</div>
+                  <div>• Офлайн-режим материалов{school.unique_details?.platform.offline_mode ? " ✓" : " ✗"}</div>
                 </div>
                 <div>
                   <div className="font-medium mb-2">Интерактивные элементы:</div>
-                  <div>• Виртуальная доска</div>
-                  <div>• 3D-модели и симуляции</div>
-                  <div>• Игровые элементы</div>
+                  <div>• Виртуальная доска{school.unique_details?.platform.virtual_board ? " ✓" : " ✗"}</div>
+                  <div>• 3D-модели и симуляции{school.unique_details?.platform.simulations_3d ? " ✓" : " ✗"}</div>
+                  <div>• Игровые элементы{school.unique_details?.platform.gaming_elements ? " ✓" : " ✗"}</div>
                 </div>
                 <div>
                   <div className="font-medium mb-2">Системные требования:</div>
-                  <div>• Интернет: от 5 Мбит/с</div>
+                  <div>• Интернет: стабильное подключение</div>
                   <div>• Устройство: ПК/планшет</div>
                   <div>• Браузер: современный</div>
                 </div>
               </div>
             </div>
 
-            {/* Preparation Results */}
+            {/* Preparation Results - Dynamic based on school data */}
             <div className="bg-orange-50 rounded-2xl p-4">
               <h5 className="font-semibold text-orange-800 mb-3 flex items-center">
                 <Award className="w-4 h-4 mr-2" />
@@ -295,19 +325,19 @@ export const SchoolCard = ({ school, rank }: SchoolCardProps) => {
               </h5>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-orange-600">78</div>
+                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.russian_avg || "—"}</div>
                   <div className="text-xs text-orange-700">Средний балл русский язык</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-orange-600">72</div>
+                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.math_avg || "—"}</div>
                   <div className="text-xs text-orange-700">Средний балл математика</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-orange-600">89%</div>
+                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.university_admission || "—"}</div>
                   <div className="text-xs text-orange-700">Поступили в ВУЗы</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-orange-600">156</div>
+                  <div className="text-2xl font-bold text-orange-600">{school.unique_details?.exam_results.graduates_2024?.split(' ')[0] || "—"}</div>
                   <div className="text-xs text-orange-700">Выпускников в 2024</div>
                 </div>
               </div>
