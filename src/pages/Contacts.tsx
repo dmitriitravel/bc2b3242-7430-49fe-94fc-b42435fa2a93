@@ -88,23 +88,12 @@ const Contacts = () => {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mt-1">
-                      <Phone className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">Телефон</h3>
-                      <p className="text-muted-foreground mb-2">Бесплатная горячая линия</p>
-                      <p className="text-xl font-bold text-primary">8 (800) 123-45-67</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mt-1">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Email</h3>
                       <p className="text-muted-foreground mb-2">Ответим в течение 24 часов</p>
-                      <p className="text-lg text-primary">info@online-schools-rating.ru</p>
+                      <p className="text-lg text-primary">info@shkola-11-klass.ru</p>
                     </div>
                   </div>
                   
@@ -164,29 +153,6 @@ const Contacts = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <Card className="gradient-primary text-white shadow-glow max-w-4xl mx-auto">
-            <CardContent className="p-12">
-              <h2 className="text-3xl font-bold mb-4">
-                Получите персональную консультацию
-              </h2>
-              <p className="text-xl mb-8 opacity-90">
-                Наши эксперты помогут выбрать идеальную онлайн-школу для вашего ребенка
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-gray-100">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Позвонить сейчас
-                </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Написать письмо
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </main>
     </div>
   );
