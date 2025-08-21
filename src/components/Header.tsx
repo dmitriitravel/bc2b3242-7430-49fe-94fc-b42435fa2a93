@@ -37,7 +37,11 @@ export const Header = () => {
                 <span className="font-medium">8 (800) 123-45-67</span>
               </div>
             </div>
-            <Button variant="secondary" size="sm">
+            <Button 
+              variant="secondary" 
+              size="sm"
+              onClick={() => document.getElementById('ai-school-selector')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Бесплатная консультация
             </Button>
           </div>

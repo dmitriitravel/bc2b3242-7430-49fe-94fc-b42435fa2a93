@@ -743,7 +743,12 @@ export const SupportingSection = () => {
                 Получите бесплатную консультацию по выбору онлайн-школы
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="accent" size="lg" className="bg-white text-primary hover:bg-gray-50 hover:text-primary/90 transition-all duration-200">
+                <Button 
+                  variant="accent" 
+                  size="lg" 
+                  className="bg-white text-primary hover:bg-gray-50 hover:text-primary/90 transition-all duration-200"
+                  onClick={() => document.getElementById('ai-school-selector')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   Бесплатная консультация
                 </Button>
                 <Button 

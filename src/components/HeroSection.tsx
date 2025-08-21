@@ -71,6 +71,7 @@ export const HeroSection = () => {
               size="lg" 
               variant="outline"
               className="text-lg px-8 py-4 h-auto border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-primary transition-all shadow-lg"
+              onClick={() => document.getElementById('ai-school-selector')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Бесплатная консультация
             </Button>
