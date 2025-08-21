@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SchoolCard } from "@/components/SchoolCard";
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { SupportingSection } from "@/components/SupportingSection";
 import { AISchoolSelector } from "@/components/AISchoolSelector";
 
@@ -295,6 +296,7 @@ const Index = () => {
 
       <AISchoolSelector />
       <SupportingSection />
+      <Footer />
     </div>
   );
 };
