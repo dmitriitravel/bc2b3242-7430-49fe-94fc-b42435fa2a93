@@ -26,7 +26,7 @@ export const Header = () => {
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Все школы</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Как выбрать</a>
             <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">О нас</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
+            <a href="/contacts" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </nav>
 
           {/* Contact Info & CTA */}
