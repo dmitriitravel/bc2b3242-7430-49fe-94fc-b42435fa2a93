@@ -46,7 +46,7 @@ async function createServer(root = process.cwd(), hmrPort = 24678) {
         .replace('<!--ssr-outlet-->', appHtml)
         .replace('</head>', `${head || ''}</head>`);
 
-      res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
+      res.status(200).set({ 'Content-Type': 'text/html', 'Cache-Control': 'no-store' }).end(html);
     } catch (e) {
       if (!isProd && vite) vite.ssrFixStacktrace(e);
       next(e);
