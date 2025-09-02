@@ -42,9 +42,24 @@ async function createServer(root = process.cwd(), hmrPort = 24678) {
 
       const { html: appHtml, head } = await render(url);
 
+      // Extract <h1> text for blog pages to set <title>
+      let dynamicHead = head || '';
+      if (url.startsWith('/blog')) {
+        const h1Match = appHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+        if (h1Match) {
+          const h1Inner = h1Match[1]
+            .replace(/<[^>]*>/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+          if (h1Inner) {
+            dynamicHead = `${dynamicHead}<title>${h1Inner}</title>`;
+          }
+        }
+      }
+
       const html = tpl
         .replace('<!--ssr-outlet-->', appHtml)
-        .replace('</head>', `${head || ''}</head>`);
+        .replace('</head>', `${dynamicHead}</head>`);
 
       res.status(200).set({ 'Content-Type': 'text/html', 'Cache-Control': 'no-store' }).end(html);
     } catch (e) {
