@@ -57,9 +57,12 @@ async function createServer(root = process.cwd(), hmrPort = 24678) {
         }
       }
 
-      const html = tpl
-        .replace('<!--ssr-outlet-->', appHtml)
-        .replace('</head>', `${dynamicHead}</head>`);
+      // Inject SSR HTML. Fallback if template lacks <!--ssr-outlet-->.
+      let html = tpl.replace('<!--ssr-outlet-->', appHtml);
+      if (html === tpl) {
+        html = tpl.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+      }
+      html = html.replace('</head>', `${dynamicHead}</head>`);
 
       res.status(200).set({ 'Content-Type': 'text/html', 'Cache-Control': 'no-store' }).end(html);
     } catch (e) {
