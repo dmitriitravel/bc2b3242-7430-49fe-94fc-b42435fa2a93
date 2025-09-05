@@ -18,221 +18,426 @@ const Top100IndividualProjectTopics = () => {
 
   const description = "100 тем индивидуальных проектов для 11 класса по математике, физике, биологии, истории и другим школьным предметам.";
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
-      <Header />
-
+return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="container mx-auto px-4 py-4">
+          <h1 className="text-2xl font-bold text-gray-800">Онлайн школы 11 класс</h1>
+        </div>
+      </header>
+      
       <div className="container mx-auto px-4 py-8">
-        <nav className="mb-8">
-          <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Главная
-          </Link>
-          <span className="mx-2 text-muted-foreground">/</span>
-          <span className="text-foreground">Блог</span>
-        </nav>
+        <button
+          onClick={handleBackClick}
+          className="mb-6 flex items-center text-gray-600 hover:text-gray-800 transition-colors hover:bg-accent/50 px-3 py-2 rounded"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          На главную
+        </button>
 
-        <div className="max-w-4xl mx-auto mb-8 bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-10 shadow-elegant border border-primary/10">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">ТОП-100 тем проектов 11 класса по школьным предметам</h1>
-          {/* in-body marker for SSR to promote into <head> */}
-          <meta data-ssr-description content={description} />
-          <p className="text-lg text-muted-foreground">{description}</p>
-        </div>
+        <article className="max-w-4xl mx-auto">
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Лучшие онлайн школы 11 класс",
+                      "item": "https://shkola-11-klass.ru/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Темы проектов 11 класса",
+                      "item": "https://shkola-11-klass.ru/blog/top-100-individual-project-topics-11th-grade"
+                    }
+                  ]
+                }
+              ]
+            })}
+          </script>
 
-        {/* JSON-LD Breadcrumbs */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+          <header className="mb-8">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
+              ТОП-100 тем проектов 11 класса по школьным предметам
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              100 тем индивидуальных проектов для 11 класса по математике, физике, биологии, истории и другим школьным предметам.
+            </p>
+          </header>
 
-        {/* Custom page-scoped styles */}
-        <style>{`
-.individual-projects-article { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #fff; }
-@media (max-width: 767px) { .individual-projects-article { margin: 20px 16px 40px; } }
-@media (min-width: 768px) and (max-width: 1367px) { .individual-projects-article { margin: 25px 16px 50px; } }
-@media (min-width: 1368px) and (max-width: 1919px) { .individual-projects-article { margin: 30px auto 60px; max-width: 1232px; } }
-@media (min-width: 1920px) { .individual-projects-article { margin: 40px auto 80px; max-width: 1324px; } }
-.proj-audience-box, .proj-key-insights-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.proj-audience-box h3, .proj-key-insights-box h3 { color: white; margin-bottom: 15px; font-size: 18px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 8px; }
-.proj-audience-list, .proj-insights-list { list-style: none; padding-left: 0; }
-.proj-audience-list li, .proj-insights-list li { padding: 8px 0 8px 25px; position: relative; font-weight: 500; }
-.proj-audience-list li:before, .proj-insights-list li:before { content: "✓"; position: absolute; left: 0; color: #90EE90; font-weight: bold; font-size: 16px; }
-.proj-section-header { background: #f8f9fa; padding: 20px; border-left: 5px solid #667eea; margin: 30px 0 20px 0; border-radius: 0 8px 8px 0; }
-.proj-section-header h2 { margin: 0; color: #333; font-size: 24px; }
-.proj-topics-grid { display: grid; gap: 15px; margin: 20px 0; }
-.proj-topic-card { background: #fff; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; transition: box-shadow 0.3s ease; }
-.proj-topic-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-.proj-topic-title { font-weight: bold; color: #495057; margin-bottom: 8px; }
-.proj-difficulty-badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: 500; margin-left: 10px; }
-.proj-basic { background: #d4edda; color: #155724; }
-.proj-advanced { background: #fff3cd; color: #856404; }
-.proj-research { background: #f8d7da; color: #721c24; }
-.proj-criteria-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-.proj-criteria-table th, .proj-criteria-table td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
-.proj-criteria-table th { background: #667eea; color: white; font-weight: 600; }
-.proj-criteria-table tr:nth-child(even) { background: #f8f9fa; }
-.proj-quote-block { background: #f8f9fa; border-left: 4px solid #667eea; padding: 20px; margin: 25px 0; font-style: italic; border-radius: 0 8px 8px 0; }
-.proj-quote-text { font-size: 16px; color: #495057; margin: 0; }
-.proj-checklist { background: #e8f5e8; padding: 20px; border-radius: 8px; margin: 20px 0; }
-.proj-checklist h4 { color: #2d5a2d; margin-bottom: 15px; }
-.proj-checklist ul { list-style: none; padding-left: 0; }
-.proj-checklist li { padding: 5px 0 5px 25px; position: relative; }
-.proj-checklist li:before { content: "□"; position: absolute; left: 0; color: #28a745; font-size: 16px; }
-.proj-timeline { background: linear-gradient(to right, #f8f9fa, #e9ecef); padding: 20px; border-radius: 8px; margin: 20px 0; }
-.proj-timeline-item { display: flex; align-items: center; margin: 15px 0; padding: 10px; background: white; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-.proj-timeline-marker { width: 40px; height: 40px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px; flex-shrink: 0; }
-.proj-external-links { background: #e3f2fd; padding: 20px; border-radius: 8px; border: 1px solid #bbdefb; margin: 25px 0; }
-.proj-external-links h4 { color: #1565c0; margin-bottom: 15px; }
-.proj-external-link { display: block; color: #1976d2; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #e3f2fd; }
-.proj-external-link:hover { color: #0d47a1; text-decoration: underline; }
-.proj-highlight-link { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white !important; padding: 8px 15px; border-radius: 20px; text-decoration: none; display: inline-block; font-weight: 500; transition: transform 0.3s ease; margin: 5px 0; }
-.proj-highlight-link:hover { transform: translateY(-2px); color: white !important; text-decoration: none; }
-.proj-faq-section { background: #f8f9fa; padding: 25px; border-radius: 8px; margin: 30px 0; }
-.proj-faq-item { margin: 20px 0; border-bottom: 1px solid #dee2e6; padding-bottom: 15px; }
-.proj-faq-question { font-weight: bold; color: #495057; margin-bottom: 8px; font-size: 16px; }
-.proj-faq-answer { color: #6c757d; line-height: 1.6; }
-.proj-topics-list { columns: 2; column-gap: 30px; margin: 15px 0; }
-.proj-topics-list li { break-inside: avoid; margin-bottom: 8px; padding: 5px 0; }
-@media (max-width: 768px) { .proj-topics-list { columns: 1; } }
-        `}</style>
-
-        <div className="individual-projects-article">
-          <div className="proj-audience-box">
-            <h3>Для кого эта статья:</h3>
-            <ul className="proj-audience-list">
-              <li>Ученики 11 класса, выбирающие тему для индивидуального проекта</li>
-              <li>Родители старшеклассников, помогающие с выбором и организацией проекта</li>
-              <li>Школьные учителя и кураторы, сопровождающие проекты учеников</li>
-            </ul>
-          </div>
-
-          <div className="proj-key-insights-box">
-            <h3>Ключевые выводы из статьи:</h3>
-            <ul className="proj-insights-list">
-              <li>5-шаговый алгоритм выбора темы поможет найти идеальный проект за 1 день</li>
-              <li>100 готовых тем с указанием уровня сложности и необходимых ресурсов</li>
-              <li>Пошаговый план реализации проекта с четким распределением по месяцам</li>
-              <li>Готовые критерии оценки и типичные вопросы для успешной защиты</li>
-            </ul>
-          </div>
-
-          <div className="proj-section-header">
-            <h2>Как быстро выбрать идеальную тему индивидуального проекта: алгоритм из 5 шагов</h2>
-          </div>
-
-          <p>Выбор темы для индивидуального проекта в 11 классе - это критически важное решение, которое повлияет на итоговую оценку и подготовку к поступлению в вуз. За 15 лет работы с выпускниками мы выделили 5 ключевых шагов, которые помогают найти идеальную тему за один день.</p>
-
-          <p>Первый шаг - определение своих интересов и сильных сторон. Составьте список из 3-5 предметов, которые вам действительно нравятся, и подумайте о том, какие темы вызывают у вас наибольшее любопытство. Второй шаг - оценка доступных ресурсов: времени, материалов, возможности проведения экспериментов или исследований.</p>
-
-          <p>Особенно важно правильно спланировать работу над проектом, если вы рассматриваете <a href="https://shkola-11-klass.ru/" className="proj-highlight-link">домашнее обучение в школе 11 класса</a>. На этой странице вы найдете подробную информацию о том, как организовать самостоятельную работу над проектом, получить необходимые консультации преподавателей и правильно распределить учебную нагрузку для достижения максимальных результатов.</p>
-
-          <h3>Критерии отбора темы по уровню сложности</h3>
-
-          <table className="proj-criteria-table">
-            <thead>
-              <tr>
-                <th>Уровень</th>
-                <th>Объем работы</th>
-                <th>Тип исследования</th>
-                <th>Время на реализацию</th>
-                <th>Ожидаемая оценка</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span className="proj-difficulty-badge proj-basic">Базовый</span></td>
-                <td>15-25 страниц</td>
-                <td>Теоретический анализ, обзор литературы</td>
-                <td>3-4 месяца</td>
-                <td>4-5 баллов</td>
-              </tr>
-              <tr>
-                <td><span className="proj-difficulty-badge proj-advanced">Продвинутый</span></td>
-                <td>25-40 страниц</td>
-                <td>Практическое исследование, эксперимент</td>
-                <td>4-5 месяцев</td>
-                <td>5 баллов</td>
-              </tr>
-              <tr>
-                <td><span className="proj-difficulty-badge proj-research">Исследовательский</span></td>
-                <td>40+ страниц</td>
-                <td>Авторские гипотезы, социальная значимость</td>
-                <td>5-6 месяцев</td>
-                <td>5 баллов + рекомендации</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div className="proj-checklist">
-            <h4>Чек-лист готовности темы к защите</h4>
-            <ul>
-              <li>Доступность не менее 15-20 качественных источников информации</li>
-              <li>Возможность получения конкретных, измеримых результатов</li>
-              <li>Соответствие временным рамкам (4-6 месяцев активной работы)</li>
-              <li>Наличие научного руководителя или консультанта по теме</li>
-              <li>Актуальность и практическая значимость исследования</li>
-            </ul>
-          </div>
-
-          <div className="proj-quote-block">
-            <p className="proj-quote-text">"Успешный проект - это не обязательно сложная тема. Это тема, которая соответствует вашим возможностям и интересам, имеет четкую структуру и приводит к конкретным результатам."</p>
-          </div>
-
-          {/* Далее основной контент с темами (сокращено для примера — включены ключевые блоки) */}
-          <div className="proj-section-header"><h2>Научно-исследовательские проекты</h2></div>
-
-          <h3>Физика и астрономия (10 тем)</h3>
-          <div className="proj-topics-grid">
-            <div className="proj-topic-card">
-              <div className="proj-topic-title">Исследование энергоэффективности солнечных батарей <span className="proj-difficulty-badge proj-advanced">Продвинутый</span></div>
-              <p>Сравнительный анализ различных типов солнечных панелей, измерение КПД при разных условиях освещения и температуры.</p>
+          <div className="space-y-8">
+            <div className="p-6 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-xl shadow-lg border-l-4 border-l-primary">
+              <h3 className="text-lg font-semibold mb-4">Для кого эта статья:</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 mt-1">▶</span>
+                  Ученики 11 класса, выбирающие тему для индивидуального проекта
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 mt-1">▶</span>
+                  Родители старшеклассников, помогающие с выбором и организацией проекта
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 mt-1">▶</span>
+                  Школьные учителя и кураторы, сопровождающие проекты учеников
+                </li>
+              </ul>
             </div>
-            <div className="proj-topic-card">
-              <div className="proj-topic-title">Влияние магнитного поля на рост кристаллов <span className="proj-difficulty-badge proj-research">Исследовательский</span></div>
-              <p>Экспериментальное исследование формирования кристаллических структур в магнитном поле различной интенсивности.</p>
+
+            <div className="p-6 bg-gradient-to-br from-pink-500 to-red-500 text-white rounded-xl shadow-lg border border-primary/20">
+              <h3 className="text-lg font-semibold mb-4">Ключевые выводы из статьи:</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 font-bold">✓</span>
+                  5-шаговый алгоритм выбора темы поможет найти идеальный проект за 1 день
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 font-bold">✓</span>
+                  100 готовых тем с указанием уровня сложности и необходимых ресурсов
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 font-bold">✓</span>
+                  Пошаговый план реализации проекта с четким распределением по месяцам
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-300 font-bold">✓</span>
+                  Готовые критерии оценки и типичные вопросы для успешной защиты
+                </li>
+              </ul>
             </div>
-            <div className="proj-topic-card">
-              <div className="proj-topic-title">Акустические свойства различных материалов <span className="proj-difficulty-badge proj-basic">Базовый</span></div>
-              <p>Измерение звукопоглощающих и звукоизолирующих свойств бытовых и строительных материалов.</p>
-            </div>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground border-b-2 border-primary pb-3">
+                Как быстро выбрать идеальную тему индивидуального проекта: алгоритм из 5 шагов
+              </h2>
+
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                Выбор темы для индивидуального проекта в 11 классе - это критически важное решение, которое повлияет на итоговую оценку и подготовку к поступлению в вуз. За 15 лет работы с выпускниками мы выделили 5 ключевых шагов, которые помогают найти идеальную тему за один день.
+              </p>
+
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                Первый шаг - определение своих интересов и сильных сторон. Составьте список из 3-5 предметов, которые вам действительно нравятся, и подумайте о том, какие темы вызывают у вас наибольшее любопытство. Второй шаг - оценка доступных ресурсов: времени, материалов, возможности проведения экспериментов или исследований.
+              </p>
+
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                Особенно важно правильно спланировать работу над проектом, если вы рассматриваете{" "}
+                <a 
+                  href="https://shkola-11-klass.ru/" 
+                  className="inline-block px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  домашнее обучение в школе 11 класса
+                </a>
+                {" "}— на этой странице вы найдете подробную информацию о том, как организовать самостоятельную работу над проектом, получить необходимые консультации преподавателей и правильно распределить учебную нагрузку для достижения максимальных результатов.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground">Критерии отбора темы по уровню сложности</h3>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse rounded-lg overflow-hidden shadow-md">
+                  <thead>
+                    <tr className="bg-indigo-600 text-white">
+                      <th className="p-4 text-left font-semibold">Уровень</th>
+                      <th className="p-4 text-left font-semibold">Объем работы</th>
+                      <th className="p-4 text-left font-semibold">Тип исследования</th>
+                      <th className="p-4 text-left font-semibold">Время на реализацию</th>
+                      <th className="p-4 text-left font-semibold">Ожидаемая оценка</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white">
+                    <tr className="border-b border-gray-200">
+                      <td className="p-4">
+                        <span className="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Базовый</span>
+                      </td>
+                      <td className="p-4">15-25 страниц</td>
+                      <td className="p-4">Теоретический анализ, обзор литературы</td>
+                      <td className="p-4">3-4 месяца</td>
+                      <td className="p-4">4-5 баллов</td>
+                    </tr>
+                    <tr className="border-b border-gray-200 bg-gray-50">
+                      <td className="p-4">
+                        <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-medium">Продвинутый</span>
+                      </td>
+                      <td className="p-4">25-40 страниц</td>
+                      <td className="p-4">Практическое исследование, эксперимент</td>
+                      <td className="p-4">4-5 месяцев</td>
+                      <td className="p-4">5 баллов</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4">
+                        <span className="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-medium">Исследовательский</span>
+                      </td>
+                      <td className="p-4">40+ страниц</td>
+                      <td className="p-4">Авторские гипотезы, социальная значимость</td>
+                      <td className="p-4">5-6 месяцев</td>
+                      <td className="p-4">5 баллов + рекомендации</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="p-6 bg-green-50 border border-green-200 rounded-lg">
+                <h4 className="text-lg font-semibold text-green-800 mb-4">Чек-лист готовности темы к защите</h4>
+                <ul className="space-y-2 text-green-700">
+                  <li>□ Доступность не менее 15-20 качественных источников информации</li>
+                  <li>□ Возможность получения конкретных, измеримых результатов</li>
+                  <li>□ Соответствие временным рамкам (4-6 месяцев активной работы)</li>
+                  <li>□ Наличие научного руководителя или консультанта по теме</li>
+                  <li>□ Актуальность и практическая значимость исследования</li>
+                </ul>
+              </div>
+
+              <div className="p-6 bg-gray-50 border-l-4 border-indigo-600 rounded-r-lg">
+                <p className="text-foreground/90 italic text-lg leading-relaxed">
+                  "Успешный проект - это не обязательно сложная тема. Это тема, которая соответствует вашим возможностям и интересам, имеет четкую структуру и приводит к конкретным результатам."
+                </p>
+              </div>
+            </section>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground border-b-2 border-primary pb-3">
+                Научно-исследовательские проекты
+              </h2>
+
+              <h3 className="text-xl font-semibold text-foreground">Физика и астрономия (10 тем)</h3>
+
+              <div className="space-y-4">
+                <div className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="font-semibold text-gray-800 mb-2">
+                    Исследование энергоэффективности солнечных батарей 
+                    <span className="ml-2 inline-block px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-medium">Продвинутый</span>
+                  </div>
+                  <p className="text-gray-600">Сравнительный анализ различных типов солнечных панелей, измерение КПД при разных условиях освещения и температуры.</p>
+                </div>
+
+                <div className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="font-semibold text-gray-800 mb-2">
+                    Влияние магнитного поля на рост кристаллов 
+                    <span className="ml-2 inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-medium">Исследовательский</span>
+                  </div>
+                  <p className="text-gray-600">Экспериментальное исследование формирования кристаллических структур в магнитном поле различной интенсивности.</p>
+                </div>
+
+                <div className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="font-semibold text-gray-800 mb-2">
+                    Акустические свойства различных материалов 
+                    <span className="ml-2 inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Базовый</span>
+                  </div>
+                  <p className="text-gray-600">Измерение звукопоглощающих и звукоизолирующих свойств бытовых и строительных материалов.</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Исследование радиоактивного фона в различных районах города</li>
+                  <li>• Создание модели телескопа и наблюдение за небесными объектами</li>
+                  <li>• Анализ энергопотребления бытовых приборов и способы его оптимизации</li>
+                  <li>• Влияние температуры на электрическое сопротивление различных материалов</li>
+                </ul>
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Исследование физических принципов работы музыкальных инструментов</li>
+                  <li>• Моделирование движения планет с помощью компьютерных программ</li>
+                  <li>• Изучение оптических свойств различных типов стекла</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-foreground">Химия и биохимия (10 тем)</h3>
+
+              <div className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <div className="font-semibold text-gray-800 mb-2">
+                  Анализ качества питьевой воды из различных источников 
+                  <span className="ml-2 inline-block px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-medium">Продвинутый</span>
+                </div>
+                <p className="text-gray-600">Химический анализ водопроводной, бутилированной и родниковой воды на содержание тяжелых металлов и органических примесей.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Исследование антиоксидантных свойств различных сортов чая</li>
+                  <li>• Влияние различных консервантов на сохранность пищевых продуктов</li>
+                  <li>• Синтез и исследование свойств биоразлагаемых полимеров</li>
+                  <li>• Анализ содержания витаминов в свежих и замороженных овощах</li>
+                  <li>• Исследование коррозионных процессов различных металлов</li>
+                </ul>
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Получение красителей из природного сырья и их стабильность</li>
+                  <li>• Влияние кислотности почвы на рост растений</li>
+                  <li>• Биодеградация пластиковых отходов микроорганизмами</li>
+                  <li>• Натуральные индикаторы кислотности из растительного сырья</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-foreground">Математика и информатика (10 тем)</h3>
+
+              <div className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <div className="font-semibold text-gray-800 mb-2">
+                  Математическое моделирование распространения эпидемии 
+                  <span className="ml-2 inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-medium">Исследовательский</span>
+                </div>
+                <p className="text-gray-600">Создание компьютерной модели распространения инфекционных заболеваний с учетом различных факторов и мер профилактики.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Фрактальная геометрия в природе и искусстве</li>
+                  <li>• Теория игр в экономических моделях</li>
+                  <li>• Криптографические алгоритмы и их стойкость</li>
+                  <li>• Оптимизация маршрутов доставки с помощью алгоритмов</li>
+                  <li>• Математические модели роста населения</li>
+                </ul>
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Анализ больших данных методами машинного обучения</li>
+                  <li>• Теория вероятностей в азартных играх и страховании</li>
+                  <li>• Алгоритмы сжатия данных и их эффективность</li>
+                  <li>• Статистический анализ успеваемости учащихся</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground border-b-2 border-primary pb-3">
+                Технологические и IT-проекты
+              </h2>
+
+              <h3 className="text-xl font-semibold text-foreground">Программирование и мобильные приложения (8 тем)</h3>
+
+              <div className="p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <div className="font-semibold text-gray-800 mb-2">
+                  Мобильное приложение для изучения иностранных языков 
+                  <span className="ml-2 inline-block px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-medium">Продвинутый</span>
+                </div>
+                <p className="text-gray-600">Разработка приложения с элементами геймификации, базой данных слов и системой отслеживания прогресса. Платформы: Android Studio/React Native.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Веб-приложение для управления личными финансами</li>
+                  <li>• Чат-бот для консультаций по выбору профессии</li>
+                  <li>• Система распознавания объектов на изображениях</li>
+                  <li>• Приложение для планирования расписания школьника</li>
+                </ul>
+                <ul className="space-y-2 text-foreground/90">
+                  <li>• Игра-симулятор экологических процессов</li>
+                  <li>• Платформа для онлайн-тестирования знаний</li>
+                  <li>• Система умного дома на базе Arduino/Raspberry Pi</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-foreground">Искусственный интеллект и машинное обучение (5 тем)</h3>
+
+              <ul className="space-y-2 text-foreground/90">
+                <li>• Нейронная сеть для диагностики заболеваний по симптомам</li>
+                <li>• Система рекомендаций фильмов на основе предпочтений пользователя</li>
+                <li>• Алгоритм предсказания погоды на основе исторических данных</li>
+                <li>• Анализ тональности текстов в социальных сетях</li>
+                <li>• Распознавание эмоций по выражению лица</li>
+              </ul>
+
+              <div className="p-6 bg-blue-50 border border-blue-200 rounded-lg">
+                <h4 className="text-lg font-semibold text-blue-800 mb-4">Международные ресурсы для вдохновения:</h4>
+                <p className="text-blue-700 mb-3">Ведущие образовательные платформы предлагают множество идей для научных проектов старшеклассников:</p>
+                <ul className="space-y-2">
+                  <li><a href="https://www.sciencebuddies.org/science-fair-projects/science-projects/eleventh-grade" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Science Buddies - Eleventh Grade Science Projects</a></li>
+                  <li><a href="https://blog.collegevine.com/research-paper-topics-for-high-schoolers" target="_blank" className="text-blue-600 hover:text-blue-800 underline">CollegeVine - 100 Research Paper Topics for High School</a></li>
+                  <li><a href="https://www.polygence.org/blog/passion-project-ideas-for-high-school-students" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Polygence - 77 Passion Project Ideas for High School Students</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground border-b-2 border-primary pb-3">
+                Пошаговый план реализации проекта
+              </h2>
+
+              <h3 className="text-xl font-semibold text-foreground">Планирование по месяцам</h3>
+
+              <div className="space-y-4">
+                <div className="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                  <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                    1-2
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">Исследование и источники</h4>
+                    <p className="text-gray-600">Поиск и анализ литературы, формулировка гипотезы, составление плана работы, выбор методов исследования</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                  <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                    3-4
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">Практическая часть</h4>
+                    <p className="text-gray-600">Проведение экспериментов, сбор данных, анкетирование, интервью, создание продукта (если предусмотрено)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                  <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                    5-6
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800">Оформление и защита</h4>
+                    <p className="text-gray-600">Анализ результатов, написание выводов, оформление работы по ГОСТу, подготовка презентации</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 bg-gray-50 border-l-4 border-indigo-600 rounded-r-lg">
+                <p className="text-foreground/90 italic text-lg leading-relaxed">
+                  "Время - ваш главный ресурс. Разбейте большую задачу на маленькие еженедельные цели, и через полгода у вас будет готовый качественный проект, а не ночные переживания перед защитой."
+                </p>
+              </div>
+            </section>
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-bold text-foreground border-b-2 border-primary pb-3">
+                FAQ - Часто задаваемые вопросы
+              </h2>
+
+              <div className="space-y-4">
+                <div className="p-6 bg-gray-50 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-2">Можно ли менять тему проекта в процессе работы?</h4>
+                  <p className="text-gray-600">Небольшие корректировки допустимы, но кардинальную смену темы лучше согласовать с руководителем до начала практической части. Изменения возможны до конца второго месяца работы.</p>
+                </div>
+
+                <div className="p-6 bg-gray-50 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-2">Сколько источников должно быть в списке литературы?</h4>
+                  <p className="text-gray-600">Для базового уровня - не менее 10-15 источников, для продвинутого - 15-25, для исследовательского - от 25. Важно качество источников: научные статьи, монографии, официальные сайты.</p>
+                </div>
+
+                <div className="p-6 bg-gray-50 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-2">Влияет ли оценка за проект на аттестат?</h4>
+                  <p className="text-gray-600">Да, индивидуальный проект - обязательный элемент учебного плана. Оценка влияет на итоговые отметки и может учитываться при поступлении в вуз как дополнительное достижение.</p>
+                </div>
+
+                <div className="p-6 bg-gray-50 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-2">Что делать, если не хватает времени на завершение проекта?</h4>
+                  <p className="text-gray-600">Сразу обратитесь к руководителю проекта. Возможны варианты: упрощение практической части, перенос сроков (в исключительных случаях) или изменение формата презентации результатов.</p>
+                </div>
+              </div>
+
+              <p className="text-lg text-foreground/90 leading-relaxed font-medium">
+                <strong>Итог:</strong> Выбор темы для индивидуального проекта в 11 классе — это инвестиция в ваше будущее. Не спешите с решением, тщательно изучите все доступные варианты, консультируйтесь с преподавателями и выбирайте тему, которая действительно вас увлекает. Помните: качественный проект может стать отличным дополнением к портфолио при поступлении в вуз.
+              </p>
+            </section>
           </div>
-
-          <ul className="proj-topics-list">
-            <li>Исследование радиоактивного фона в различных районах города</li>
-            <li>Создание модели телескопа и наблюдение за небесными объектами</li>
-            <li>Анализ энергопотребления бытовых приборов и способы его оптимизации</li>
-            <li>Влияние температуры на электрическое сопротивление различных материалов</li>
-            <li>Исследование физических принципов работы музыкальных инструментов</li>
-            <li>Моделирование движения планет с помощью компьютерных программ</li>
-            <li>Изучение оптических свойств различных типов стекла</li>
-          </ul>
-
-          <h3>Химия и биохимия (10 тем)</h3>
-          <div className="proj-topics-grid">
-            <div className="proj-topic-card">
-              <div className="proj-topic-title">Анализ качества питьевой воды из различных источников <span className="proj-difficulty-badge proj-advanced">Продвинутый</span></div>
-              <p>Химический анализ водопроводной, бутилированной и родниковой воды на содержание тяжелых металлов и органических примесей.</p>
-            </div>
-            <div className="proj-topic-card">
-              <div className="proj-topic-title">Биодеградация пластиковых отходов микроорганизмами <span className="proj-difficulty-badge proj-research">Исследовательский</span></div>
-              <p>Исследование способности различных бактерий разлагать пластиковые материалы и оценка перспектив практического применения.</p>
-            </div>
-            <div className="proj-topic-card">
-              <div className="proj-topic-title">Натуральные индикаторы кислотности из растительного сырья <span className="proj-difficulty-badge proj-basic">Базовый</span></div>
-              <p>Получение pH-индикаторов из овощей и фруктов, сравнение их эффективности с промышленными аналогами.</p>
-            </div>
-          </div>
-
-          <ul className="proj-topics-list">
-            <li>Исследование антиоксидантных свойств различных сортов чая</li>
-            <li>Влияние различных консервантов на сохранность пищевых продуктов</li>
-            <li>Синтез и исследование свойств биоразлагаемых полимеров</li>
-            <li>Анализ содержания витаминов в свежих и замороженных овощах</li>
-            <li>Исследование коррозионных процессов различных металлов</li>
-            <li>Получение красителей из природного сырья и их стабильность</li>
-            <li>Влияние кислотности почвы на рост растений</li>
-          </ul>
-
-          {/* Остальные разделы статьи опущены для краткости, структура сохранена */}
-        </div>
+        </article>
       </div>
+      
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <p>&copy; 2024 Онлайн школы 11 класс. Все права защищены.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
