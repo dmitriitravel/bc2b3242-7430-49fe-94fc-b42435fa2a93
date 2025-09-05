@@ -19,14 +19,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    ssr: false,
-    rollupOptions: {
-      input: path.resolve(__dirname, 'index.html')
-    },
-    outDir: 'dist/client'
-  },
-  ssr: {
-    noExternal: []
-  }
 }));
