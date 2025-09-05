@@ -42,8 +42,9 @@ async function createServer(root = process.cwd(), hmrPort = 24678) {
 
       const { html: appHtml, head } = await render(url);
 
-      // Extract <h1> text for blog pages to set <title>
+      // Extract <h1> for title and optional in-body description marker for blog pages
       let dynamicHead = head || '';
+      let bodyAppHtml = appHtml;
       if (url.startsWith('/blog')) {
         const h1Match = appHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
         if (h1Match) {
@@ -55,12 +56,21 @@ async function createServer(root = process.cwd(), hmrPort = 24678) {
             dynamicHead = `${dynamicHead}<title>${h1Inner}</title>`;
           }
         }
+        const descMatch = appHtml.match(/<meta[^>]*data-ssr-description[^>]*content=["']([\s\S]*?)["'][^>]*>/i);
+        if (descMatch) {
+          const descContent = descMatch[1].trim();
+          if (descContent) {
+            dynamicHead = `${dynamicHead}<meta name="description" content="${descContent.replace(/"/g, '&quot;')}" />`;
+          }
+          // remove marker from body
+          bodyAppHtml = appHtml.replace(/<meta[^>]*data-ssr-description[^>]*>\s*/i, '');
+        }
       }
 
       // Inject SSR HTML. Fallback if template lacks <!--ssr-outlet-->.
-      let html = tpl.replace('<!--ssr-outlet-->', appHtml);
+      let html = tpl.replace('<!--ssr-outlet-->', bodyAppHtml);
       if (html === tpl) {
-        html = tpl.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+        html = tpl.replace('<div id="root"></div>', `<div id="root">${bodyAppHtml}</div>`);
       }
       html = html.replace('</head>', `${dynamicHead}</head>`);
 
