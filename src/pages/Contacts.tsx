@@ -94,7 +94,7 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Email</h3>
                       <p className="text-muted-foreground mb-2">Ответим в течение 24 часов</p>
-                      <p className="text-lg text-primary">info@shkola-11-klass.ru</p>
+                      <p className="text-lg text-primary">info@best-online-schools.ru</p>
                     </div>
                   </div>
                   
