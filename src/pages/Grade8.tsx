@@ -3,7 +3,7 @@ import { SchoolCard } from "@/components/SchoolCard";
 import { HeroSection8 } from "@/components/HeroSection8";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SupportingSection } from "@/components/SupportingSection";
+import { SupportingSection8 } from "@/components/SupportingSection8";
 import { AISchoolSelector } from "@/components/AISchoolSelector";
 
 // Sample data for demonstration until database is ready
@@ -612,113 +612,8 @@ const Grade8 = () => {
         )}
       </main>
 
-      
-      {/* Blog Articles Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Полезные статьи об онлайн-образовании
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Экспертные материалы о выборе онлайн-школ и дистанционном обучении для 8 класса
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <a
-            href="/blog/besplatnoe-obuchenie-8-klass"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Бесплатное онлайн обучение в 8 классе
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Подробный гид по бесплатным возможностям получения образования в 8 классе онлайн
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/online-school-reviews"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Отзывы об онлайн-школах для 8 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Как правильно выбрать онлайн-школу: критерии отбора, анализ отзывов и рекомендации
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/certificate-online-8th-grade"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Аттестат онлайн для 8 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Как получить официальный аттестат об основном образовании в онлайн-школе
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/distance-education-8-grade"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Дистанционное образование для 8 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Преимущества и особенности дистанционного обучения в 8 классе
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/home-schooling-8th-grade-pros-cons"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Плюсы и минусы домашнего обучения в 8 классе
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Полный анализ преимуществ и недостатков домашнего образования для учеников 8 класса
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/algoritm-vybora-shkoly"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Алгоритм выбора онлайн-школы
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Пошаговое руководство по выбору подходящей онлайн-школы для вашего ребенка
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-        </div>
-      </section>
-
       <AISchoolSelector />
-      <SupportingSection />
+      <SupportingSection8 />
       <Footer />
     </div>
   );
