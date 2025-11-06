@@ -26,21 +26,21 @@ export const HeroSection = () => {
             Лучшие онлайн-школы
             <br />
             <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-              для 11 класса
+              России 2025
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Независимый рейтинг аккредитованных онлайн-школ. 
-            Завершите 11 класс дистанционно с официальным аттестатом 
+            Независимый рейтинг аккредитованных онлайн-школ для всех классов. 
+            Качественное дистанционное образование с официальным аттестатом 
             государственного образца.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 max-w-3xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-              <div className="text-2xl font-bold">50,000+</div>
-              <div className="text-sm text-white/80">Выпускников</div>
+              <div className="text-2xl font-bold">150,000+</div>
+              <div className="text-sm text-white/80">Учеников</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
               <div className="text-2xl font-bold">2,500+</div>
@@ -51,8 +51,8 @@ export const HeroSection = () => {
               <div className="text-sm text-white/80">Аккредитация</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-              <div className="text-2xl font-bold">98%</div>
-              <div className="text-sm text-white/80">Поступают в ВУЗы</div>
+              <div className="text-2xl font-bold">1-11</div>
+              <div className="text-sm text-white/80">Классы</div>
             </div>
           </div>
 

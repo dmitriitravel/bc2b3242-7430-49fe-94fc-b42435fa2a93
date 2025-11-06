@@ -159,7 +159,7 @@ export const SupportingSection = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 rounded-full px-6 py-2 mb-6">
               <Star className="w-5 h-5" />
-              <span className="font-semibold">Отзывы выпускников</span>
+              <span className="font-semibold">Отзывы учеников</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Последние отзывы</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -184,7 +184,7 @@ export const SupportingSection = () => {
                 },
                 {
                   name: "Дмитрий К.",
-                  role: "Ученик 11 класса",
+                  role: "Ученик 9 класса",
                   school: "Домашняя школа ИнтернетУрок",
                   rating: 4,
                   avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face",
@@ -195,35 +195,35 @@ export const SupportingSection = () => {
                 },
                 {
                   name: "Мария С.",
-                  role: "Мама выпускника",
+                  role: "Мама ученицы 7 класса",
                   school: "Онлайн-лицей №1",
                   rating: 5,
                   avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
-                  text: "Сын закончил 11 класс экстерном за полгода. Очень довольны результатом!",
-                  results: "ЕГЭ сдан досрочно, все предметы выше 80 баллов",
-                  achievement: "Поступил в МФТИ",
+                  text: "Дочь совмещает учебу с профессиональными занятиями танцами. Очень довольны результатом!",
+                  results: "Все предметы на отлично, прогресс в танцах",
+                  achievement: "Победитель международного конкурса",
                   date: "1 неделю назад"
                 },
                 {
                   name: "Александр П.",
-                  role: "Выпускник 2024",
+                  role: "Ученик 10 класса",
                   school: "Школа Будущего Онлайн",
                   rating: 5,
                   avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
-                  text: "Совмещал учебу со спортом. Индивидуальный график позволил готовиться к соревнованиям.",
-                  results: "ЕГЭ: Физика - 92, Математика - 89",
-                  achievement: "КМС по плаванию + поступление в МГТУ",
+                  text: "Совмещаю учебу со спортом. Индивидуальный график позволяет готовиться к соревнованиям.",
+                  results: "Средний балл: 4.8, активная подготовка к ЕГЭ",
+                  achievement: "КМС по плаванию",
                   date: "2 недели назад"
                 },
                 {
                   name: "Елена В.",
-                  role: "Мама ученицы",
+                  role: "Мама ученика 6 класса",
                   school: "Цифровая Школа",
                   rating: 4,
                   avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=64&h=64&fit=crop&crop=face",
-                  text: "Дочь изучает программирование параллельно с школьной программой. Отличная техническая поддержка.",
+                  text: "Сын изучает программирование параллельно со школьной программой. Отличная техническая поддержка.",
                   results: "Средний балл 4.9, сертификат по Python",
-                  achievement: "Победитель хакатона",
+                  achievement: "Победитель школьного хакатона",
                   date: "3 недели назад"
                 },
                 {
@@ -593,7 +593,7 @@ export const SupportingSection = () => {
               Часто задаваемые вопросы
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Всё, что нужно знать о переходе в онлайн-школу для завершения 11 класса
+              Всё, что нужно знать о переходе в онлайн-школу
             </p>
           </div>
 
@@ -622,7 +622,7 @@ export const SupportingSection = () => {
                     <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
                       <Calendar className="w-5 h-5 text-green-600" />
                     </div>
-                    <span>Можно ли перейти в онлайн-школу в середине 11 класса?</span>
+                    <span>Можно ли перейти в онлайн-школу в середине года?</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-left text-gray-600 pb-6 ml-13 leading-relaxed">
