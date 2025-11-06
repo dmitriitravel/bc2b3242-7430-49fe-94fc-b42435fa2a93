@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Grade6 from "./pages/Grade6";
 import Grade7 from "./pages/Grade7";
 import Grade8 from "./pages/Grade8";
 import BlogPost from "./pages/BlogPost";
@@ -32,6 +33,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/6-klass" element={<Grade6 />} />
           <Route path="/7-klass" element={<Grade7 />} />
           <Route path="/8-klass" element={<Grade8 />} />
           <Route path="/blog/algoritm-vybora-shkoly" element={<BlogPost />} />
