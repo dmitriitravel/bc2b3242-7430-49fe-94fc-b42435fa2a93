@@ -16,7 +16,7 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              Независимый рейтинг лучших онлайн-школ России для завершения 11 класса. 
+              Независимый рейтинг лучших онлайн-школ России. 
               Помогаем найти идеальную школу для вашего ребенка.
             </p>
             <p className="text-muted-foreground text-xs">
@@ -62,7 +62,7 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">info@shkola-11-klass.ru</span>
+                <span className="text-muted-foreground">info@best-online-schools.ru</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-primary" />
