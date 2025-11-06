@@ -587,10 +587,10 @@ const Index = () => {
             <span className="font-semibold text-primary">Рейтинг 2025</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Топ-10 онлайн-школ для 11 класса
+            Топ-10 онлайн-школ
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Независимый рейтинг лучших онлайн-школ России для завершения 11 класса. 
+            Независимый рейтинг лучших онлайн-школ России. 
             Все школы проверены и имеют государственную аккредитацию.
           </p>
         </div>
@@ -613,155 +613,6 @@ const Index = () => {
       </main>
 
       
-      {/* Blog Articles Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Полезные статьи об онлайн-образовании
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Экспертные материалы о выборе онлайн-школ, подготовке к ЕГЭ и дистанционном обучении
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <a
-            href="/blog/besplatnoe-obuchenie-11-klass"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Бесплатное онлайн обучение в 11 классе
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Подробный гид по бесплатным возможностям получения образования в 11 классе онлайн
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/online-school-reviews"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Отзывы об онлайн-школах для 11 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Как правильно выбрать онлайн-школу: критерии отбора, анализ отзывов и рекомендации
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/certificate-online-11th-grade"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Аттестат онлайн для 11 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Как получить официальный аттестат о среднем общем образовании в онлайн-школе
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/best-online-schools-ege-11th-grade"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Лучшие онлайн-школы для подготовки к ЕГЭ
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Рейтинг онлайн-школ для эффективной подготовки к ЕГЭ в 11 классе
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/distance-education-11-grade"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Дистанционное образование для 11 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Преимущества и особенности дистанционного обучения в выпускном классе
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/home-schooling-11th-grade-pros-cons"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Плюсы и минусы домашнего обучения в 11 классе
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Полный анализ преимуществ и недостатков домашнего образования для выпускников
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/algoritm-vybora-shkoly"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Алгоритм выбора онлайн-школы
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Пошаговое руководство по выбору подходящей онлайн-школы для вашего ребенка
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/finish-11th-grade-online"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Экстернат онлайн для 11 класса
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Как закончить 11 класс экстерном в онлайн-формате за короткий срок
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-
-          <a
-            href="/blog/11-class-for-adults-online-school"
-            className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-primary transition-all duration-300 border border-border"
-          >
-            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-              Онлайн-школа 11 класса для взрослых
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Возможности получения среднего образования в онлайн-формате для взрослых
-            </p>
-            <span className="text-primary font-medium group-hover:underline">
-              Читать статью →
-            </span>
-          </a>
-        </div>
-      </section>
-
       <AISchoolSelector />
       <SupportingSection />
       <Footer />
